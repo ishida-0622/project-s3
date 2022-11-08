@@ -5,6 +5,8 @@ const entries = glob.sync("./dist/**/*.tsx");
 module.exports = {
     entry: {
         test: "./src/pages/map/index.tsx",
+        login: "./src/pages/login",
+        signup: "./src/pages/signup",
     },
     output: {
         path: path.resolve(__dirname, "./public/dist"),
@@ -23,6 +25,7 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 loader: "file-loader",
+                options: {},
             },
         ],
     },

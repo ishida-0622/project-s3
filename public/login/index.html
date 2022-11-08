@@ -7,12 +7,11 @@
         <title>Document</title>
     </head>
     <body>
-        <div>
-            メールアドレス<input id="mailAddress" type="mailAddress" required/>
-        </div>
-        <div>
-            パスワード<input id="password" type="password" required/>
-        </div>
-            <button id="login">ログイン</button>
+        <form id="loginForm">
+            <input type="email" name="email" id="email" />
+            <input type="password" name="password" id="password" />
+            <input type="submit" value="Login" />
+        </form>
+        <script src="../dist/login.bundle.js"></script>
     </body>
 </html>
