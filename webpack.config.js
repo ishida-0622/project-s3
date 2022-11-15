@@ -4,9 +4,13 @@ const entries = glob.sync("./dist/**/*.tsx");
 
 module.exports = {
     entry: {
-        test: "./src/pages/map/index.tsx",
+        // test: "./src/pages/map/index.tsx",
         login: "./src/pages/login",
         signup: "./src/pages/signup",
+        lostItem: "./src/pages/lostItem",
+        lostChild:"./src/pages/lostChild",
+        lostChildCustomer:"./src/pages/lostChild/customer",
+
     },
     output: {
         path: path.resolve(__dirname, "./public/dist"),
