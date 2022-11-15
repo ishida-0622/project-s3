@@ -6,6 +6,10 @@ export type shop = {
 };
 
 export type map = {
+    origin: [number, number];
+    upper_right: [number, number];
+    lower_left: [number, number];
+    lower_right: [number, number];
     /** node[i][j] i階のidがjの店、エレベーター等 */
     node: {
         floor: {
@@ -40,6 +44,10 @@ export const mapConverter: FirestoreDataConverter<map> = {
     fromFirestore: (snapshot, options): map => {
         const data = snapshot.data(options);
         return {
+            origin: data.origin,
+            upper_right: data.upper_right,
+            lower_left: data.lower_left,
+            lower_right: data.lower_right,
             node: data.node,
             edge: data.edge,
         };
