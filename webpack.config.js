@@ -3,14 +3,16 @@ const glob = require("glob");
 const entries = glob.sync("./dist/**/*.tsx");
 
 module.exports = {
+    mode: "production",
     entry: {
-        // test: "./src/pages/map/index.tsx",
+        test: "./src/pages/map",
         login: "./src/pages/login",
         signup: "./src/pages/signup",
         lostItem: "./src/pages/lostItem",
-        lostChild:"./src/pages/lostChild",
-        lostChildCustomer:"./src/pages/lostChild/customer",
+        lostChild: "./src/pages/lostChild",
+        lostChildCustomer: "./src/pages/lostChild/customer",
 
+        z: "./z.js",
     },
     output: {
         path: path.resolve(__dirname, "./public/dist"),
