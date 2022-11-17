@@ -11,7 +11,6 @@ module.exports = {
         lostItem: "./src/pages/lostItem",
         lostChild: "./src/pages/lostChild",
         lostChildCustomer: "./src/pages/lostChild/customer",
-
         z: "./z.js",
     },
     output: {
