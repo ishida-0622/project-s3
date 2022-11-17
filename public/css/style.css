@@ -229,9 +229,46 @@ h1 {
 }
 /* h1タグの中央揃え */
 
-
     .btn-submit {
         width: 100%;
         text-align: center;
         color: aqua;
     }
+
+.botton-back{
+    margin-top: 10%;
+}
+
+.wrapper{
+    background: #66cdaa;
+	color: #fff;
+	border: 2px dashed #fff;
+	box-shadow: 0 0 0 10px #7fffd4;
+	padding: 1rem;
+	border-radius: 2px;
+	margin-top: 50vh auto 0;
+    transform: translateY(10%);
+}
+
+.wrapper .title{
+    display: flex;	
+}
+
+.wrapper .title .image{
+    width: 90px;
+    height: 90px;
+    margin: 5% 0% 0% 10%;
+}
+
+.wrapper .title .shop-name{
+    margin:10% 0% 0% 10%;
+    font-size: 220%;
+    font-weight: normal;
+}
+
+.wrapper .expla{
+    font-size: 130%;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: dashed 2px #6b8e23;
+}
