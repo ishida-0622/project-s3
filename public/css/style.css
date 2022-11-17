@@ -288,3 +288,32 @@ h1 {
     margin: 2em 0;
     border: dashed 2px #6b8e23;
 }
+
+.post{
+    border: 2px solid #38b48b;
+    border-radius: 5px;
+    position: relative;
+    margin: 2em 0.5em 1em;
+    background-color: #fef4f4;
+}
+
+.post-title{
+    position: absolute;
+    right: 60%;
+    left: 0;
+    top: -1.7em;
+    margin-left: 0.5em;
+    padding: 0 .5em;
+    background: #38b48b;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.post-date{
+    padding-top: 1em;
+    margin: 0.5em;
+}
+
+.post-text{
+    margin: 0.5em;
+}

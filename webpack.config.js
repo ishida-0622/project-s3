@@ -8,7 +8,7 @@ module.exports = {
         // test: "./src/pages/map",
         login: "./src/pages/login",
         signup: "./src/pages/signup",
-        lostItem: "./src/pages/lostItem",
+        // lostItem: "./src/pages/lostItem",
         lostChild: "./src/pages/lostChild",
         lostChildCustomer: "./src/pages/lostChild/customer",
         lostItemCustomer:"./src/pages/lostItem/customer",
