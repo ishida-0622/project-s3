@@ -11,6 +11,7 @@ module.exports = {
         // lostItem: "./src/pages/lostItem",
         lostChild: "./src/pages/lostChild",
         lostChildCustomer: "./src/pages/lostChild/customer",
+        shopList: "./src/pages/shopList",
         lostItemCustomer:"./src/pages/lostItem/customer",
         // z: "./z.js",
     },

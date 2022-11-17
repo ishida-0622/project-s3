@@ -104,3 +104,31 @@ export const lostChildConverter: FirestoreDataConverter<lostChild> = {
         };
     },
 };
+
+export type storeInfo = {
+
+    store_name: string;
+    store_logo: string;
+    store_detail: string;
+    is_resolve: boolean;
+}
+
+export const storeInfoConverter: FirestoreDataConverter<storeInfo> = {
+    toFirestore: (storeInfoData: storeInfo) => {
+        return {
+            store_name: storeInfoData.store_name,
+            store_logo: storeInfoData.store_logo,
+            store_detail: storeInfoData.store_detail,
+            is_resolve: storeInfoData.is_resolve,
+        };
+    },
+    fromFirestore: (snapshot, options): storeInfo => {
+        const data = snapshot.data(options);
+        return {
+            store_name: data.store_name, //店舗名
+            store_logo: data.store_logo, //店舗のロゴ
+            store_detail: data.store_detail   ,//店舗詳細
+            is_resolve: data.is_resolve, //表示・非表表
+        }
+    }
+};
