@@ -1,21 +1,24 @@
 @charset "utf-8";
 
+body {
+    margin: 0;
+    padding: 0;
+}
 
 /* ハンバーガーメニュー */
 
-
 header {
-  padding: 16px;
-  background: lightgreen;
+    padding: 16px;
+    background: lightgreen;
 }
 
-.h-menu{
-  position: relative;
+.h-menu {
+    position: relative;
 }
 
 /*inputのcheckboxは非表示に*/
 .h-menuCheckbox {
-  display:none;
+    display: none;
 }
 
 /*ハンバーガーメニュー*/
@@ -27,13 +30,15 @@ header {
 }
 
 /*3本線*/
-.hamburger-icon, .hamburger-icon::before, .hamburger-icon::after {
-    content: '';
+.hamburger-icon,
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: "";
     display: block;
     position: absolute;
     z-index: 100;
-    top:0;
-    bottom:0;
+    top: 0;
+    bottom: 0;
     width: 32px;
     height: 3px;
     background: white;
@@ -57,7 +62,7 @@ header {
     height: 100%;
     background: black;
     opacity: 0;
-    transition: .7s ease-in-out;
+    transition: 0.7s ease-in-out;
 }
 
 /*中身*/
@@ -72,51 +77,51 @@ header {
     padding: 53px 16px 16px;
     background: lightgreen;
     overflow: auto;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);
 }
 
 /*チェックボックスにチェックが入ったら表示*/
-input:checked ~ .h-menu_icon .hamburger-icon{
+input:checked ~ .h-menu_icon .hamburger-icon {
     background: transparent;
 }
-input:checked ~ .h-menu_icon .hamburger-icon::before{
+input:checked ~ .h-menu_icon .hamburger-icon::before {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    top:10px;
-    z-index:999;
+    top: 10px;
+    z-index: 999;
 }
-input:checked ~ .h-menu_icon .hamburger-icon::after{
+input:checked ~ .h-menu_icon .hamburger-icon::after {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    top:10px;
-    z-index:999;
+    top: 10px;
+    z-index: 999;
 }
 input:checked ~ #h-menu_black {
     display: block;
-    opacity: .8;
+    opacity: 0.8;
 }
 #h-menu_checkbox:checked ~ #h-menu_content {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);
-    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+    box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
 }
 .h-menu_icon .hamburger-icon,
 .h-menu_icon .hamburger-icon::before,
 .h-menu_icon .hamburger-icon::after,
 #h-menu_black,
-#h-menu_content{
-    -webkit-transition: all .3s;
-    transition: all .3s;
+#h-menu_content {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
-#h-menu_content ul{
+#h-menu_content ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-#h-menu_content ul li{
+#h-menu_content ul li {
     border-bottom: solid 1px white;
 }
 #h-menu_content li a {
@@ -133,70 +138,81 @@ input:checked ~ #h-menu_black {
 
 /* ハンバーガーメニュー */
 
-   /*========================
+/*========================
 　smartphone　bottom menu
 　========================*/
-.mini-text{font-size:20px;}/*文字大きさ*/
+.mini-text {
+    font-size: 20px;
+} /*文字大きさ*/
 ul.bottom-menu {
     position: fixed;
-    left:0;
-    bottom:0;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    height:5%;/*高さ*/
-    margin:0;
-    background-color:lightgreen;/*背景色*/
-    border-top:2px solid lightgreen;/*バーの上の線*/
-    border-bottom:2px solid lightgreen;/*バーの下の線*/
-    text-align:center;
-    padding:20px 0;
-    z-index:30;}
+    height: 5%; /*高さ*/
+    margin: 0;
+    background-color: lightgreen; /*背景色*/
+    border-top: 2px solid lightgreen; /*バーの上の線*/
+    border-bottom: 2px solid lightgreen; /*バーの下の線*/
+    text-align: center;
+    padding: 20px 0;
+    z-index: 30;
+}
 ul.bottom-menu li {
-    float:left;
-    width:25%;
-    background-color:lightgreen;/*背景色*/
-    list-style-type:none;
-    text-align:center;
-    font-size:20px;/*アイコンのサイズ*/}
+    float: left;
+    width: 25%;
+    background-color: lightgreen; /*背景色*/
+    list-style-type: none;
+    text-align: center;
+    font-size: 20px; /*アイコンのサイズ*/
+}
 .bottom-menu li a {
     display: block;
-    color:black;/*アイコン＆文字の色*/
-    padding-top:10px;
-    padding-bottom:5px;
-    line-height:10px;
-    text-decoration:none;}
+    color: black; /*アイコン＆文字の色*/
+    padding-top: 10px;
+    padding-bottom: 5px;
+    line-height: 10px;
+    text-decoration: none;
+}
 .bottom-menu li a:hover {
-    color:lightgreen;/*マウスオーバー時の色*/}
+    color: lightgreen; /*マウスオーバー時の色*/
+}
 /* === 展開メニュー === */
 ul.menu-second-level {
     visibility: hidden;
     opacity: 0;
-    z-index:1;}
-ul.menu-second-level li a{
-    border-top:1px dashed #a9a9a9;/*展開の枠点線*/
-        font-size:20px;/*展開メニューの文字サイズ*/
-        line-height:30px;/*文字の縦幅*/}
+    z-index: 1;
+}
+ul.menu-second-level li a {
+    border-top: 1px dashed #a9a9a9; /*展開の枠点線*/
+    font-size: 20px; /*展開メニューの文字サイズ*/
+    line-height: 30px; /*文字の縦幅*/
+}
 .menu-second-level li a:hover {
-    height:100%;
-    background: black;/*マウスオーバーの色*/}
+    height: 100%;
+    background: black; /*マウスオーバーの色*/
+}
 li.menu-width-max ul.menu-second-level {
     position: absolute;
-    bottom: 47px;/*高さ*/
+    bottom: 47px; /*高さ*/
     left: 0;
     box-sizing: border-box;
     width: 100%;
-    padding:0;}
+    padding: 0;
+}
 li.menu-width-max:hover ul.menu-second-level {
-    bottom: 47px;/*高さ*/
+    bottom: 47px; /*高さ*/
     visibility: visible;
-    opacity: 1;}
+    opacity: 1;
+}
 li.menu-width-max ul.menu-second-level li {
     float: left;
     width: 100%;
-    border: none;}
+    border: none;
+}
 
-
-    /* サインアップ */
-    /*Don't forget to add Font Awesome CSS : "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"*/
+/* サインアップ */
+/*Don't forget to add Font Awesome CSS : "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"*/
 input[type="text"] {
     width: 100%;
     border: 2px solid #aaa;
@@ -206,20 +222,20 @@ input[type="text"] {
     padding: 8px;
     box-sizing: border-box;
     transition: 0.3s;
-  }
+}
 
-  input[type="text"]:focus {
+input[type="text"]:focus {
     border-color: dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
-  }
+}
 
-  .inputWithIcon input[type="text"] {
+.inputWithIcon input[type="text"] {
     padding-left: 40px;
-  }
+}
 
-  .inputWithIcon {
+.inputWithIcon {
     position: relative;
-  }
+}
 
 /* サインアップ */
 
@@ -229,9 +245,46 @@ h1 {
 }
 /* h1タグの中央揃え */
 
+.btn-submit {
+    width: 100%;
+    text-align: center;
+    color: aqua;
+}
 
-    .btn-submit {
-        width: 100%;
-        text-align: center;
-        color: aqua;
-    }
+.botton-back{
+    margin-top: 10%;
+}
+
+.wrapper{
+    background: #66cdaa;
+	color: #fff;
+	border: 2px dashed #fff;
+	box-shadow: 0 0 0 10px #7fffd4;
+	padding: 1rem;
+	border-radius: 2px;
+	margin-top: 50vh auto 0;
+    transform: translateY(10%);
+}
+
+.wrapper .title{
+    display: flex;	
+}
+
+.wrapper .title .image{
+    width: 90px;
+    height: 90px;
+    margin: 5% 0% 0% 10%;
+}
+
+.wrapper .title .shop-name{
+    margin:10% 0% 0% 10%;
+    font-size: 220%;
+    font-weight: normal;
+}
+
+.wrapper .expla{
+    font-size: 130%;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: dashed 2px #6b8e23;
+}
