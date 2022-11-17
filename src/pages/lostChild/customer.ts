@@ -10,11 +10,9 @@ import { lostChildConverter } from "../../types/firestoreTypes";
 
 const main = async () => {
     const element = document.getElementById("element");
-    const element2 = document.getElementById("element");
-    const element3 = document.getElementById("element");
     // const elem = document.createElement("div");
 
-    if (element&&element2&&element3) {
+    if (element) {
         const snapshot = await getDocs(
             collection(db, "lost_child").withConverter(lostChildConverter)
         );
@@ -26,16 +24,21 @@ const main = async () => {
                 return;
             }
             // const elem = document.createElement("ul");
-            const elem = document.createElement("h4");
-            element.appendChild(elem);
-            elem.innerText = data.date;
-            const elem2 = document.createElement("h4");
-            element2.appendChild(elem2);
-            elem2.innerText = data.title;
-            const elem3 = document.createElement("h4");
-            element3.appendChild(elem3);
+            const e = document.createElement("div");
+            e.className = "post"
+            const elem = document.createElement("h3");
+            elem.className = "post-title"
+            e.appendChild(elem);
+            elem.innerText = data.title;
+            const elem2 = document.createElement("p");
+            elem2.className = "post-date"
+            e.appendChild(elem2);
+            elem2.innerText = data.date;
+            const elem3 = document.createElement("p");
+            elem3.className = "post-text"
+            e.appendChild(elem3);
             elem3.innerText = data.text;
-
+            element.appendChild(e)
         });
         // (element as HTMLHeadingElement).textContent
     }
