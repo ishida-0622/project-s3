@@ -1,5 +1,5 @@
 import { db } from "../../firebase/firebaseConfig";
-import { collection , doc, getDocs } from "firebase/firestore";
+import { collection, doc, getDocs } from "firebase/firestore";
 import { storeInfoConverter } from "../../types/firestoreTypes";
 
 const main = async () => {
@@ -7,7 +7,7 @@ const main = async () => {
     const element2 = document.getElementById("element");
     const element3 = document.getElementById("element");
 
-    if (element&&element2&&element3) {
+    if (element && element2 && element3) {
         const snapshot = await getDocs(
             collection(db, "store_info").withConverter(storeInfoConverter)
         );
@@ -16,7 +16,7 @@ const main = async () => {
         docs.forEach((snapshot) => {
             const data = snapshot.data();
             const id = snapshot.id;
-            if (data.is_resolve){
+            if (data.is_resolve) {
                 return;
             }
             const elem = document.createElement("h4");
@@ -28,7 +28,6 @@ const main = async () => {
             const elem3 = document.createElement("h4");
             element3.appendChild(elem3);
             elem3.innerText = data.store_detail;
-
         });
     }
 };

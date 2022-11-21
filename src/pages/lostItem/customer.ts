@@ -14,7 +14,7 @@ const main = async () => {
     const element3 = document.getElementById("element");
     // const elem = document.createElement("div");
 
-    if (element&&element2&&element3) {
+    if (element && element2 && element3) {
         const snapshot = await getDocs(
             collection(db, "lost_item").withConverter(lostItemConverter)
         );
@@ -32,7 +32,6 @@ const main = async () => {
             const elem3 = document.createElement("h4");
             element3.appendChild(elem3);
             elem3.innerText = data.text;
-
         });
         // (element as HTMLHeadingElement).textContent
     }
