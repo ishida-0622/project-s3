@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=development",
     "start": "webpack -w --mode=development",
-    "s": "firebase serve"
+    "s": "firebase serve",
+    "fmt": "prettier --write {public,src}/**/*.{js,ts,tsx,html,css}"
   },
   "keywords": [],
   "author": "",
