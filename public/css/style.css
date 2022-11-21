@@ -103,12 +103,12 @@ input:checked ~ .h-menu_icon .hamburger-icon::after {
     z-index: 999;
 }
 
-input:checked~#h-menu_black {
+input:checked ~ #h-menu_black {
     display: block;
     opacity: 0.8;
 }
 
-#h-menu_checkbox:checked~#h-menu_content {
+#h-menu_checkbox:checked ~ #h-menu_content {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);
     box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
@@ -239,12 +239,10 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-input[type="text"]:focus {
     border-color: dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
 }
 
-.inputWithIcon input[type="text"] {
 .inputWithIcon input[type="text"] {
     padding-left: 40px;
 }
@@ -276,53 +274,48 @@ h1 {
     flex-wrap: wrap;
     display: flex;
     text-align: center;
-  }
+}
 
-  .tab_class {
-    width: calc(100%/2);
+.tab_class {
+    width: calc(100% / 2);
     height: 50%;
     background-color: darkgrey;
     line-height: 50px;
     font-size: 15px;
     text-align: center;
-    display:　inline-block;
+    display: inline-block;
     float: left;
     order: -1;
-  }
+}
 
-  input[name="tab_name"] {
+input[name="tab_name"] {
     display: none;
-  }
+}
 
-  input:checked + .tab_class {
+input:checked + .tab_class {
     background-color: green;
     color: aliceblue;
+}
 
-  }
-
-  .content_class {
+.content_class {
     display: none;
     width: 100%;
+}
 
-  }
-
-  input:checked + .tab_class + .content_class {
-    display:inline-block;
-  }
-  /* 総合案内迷子忘れ物選択 */
+input:checked + .tab_class + .content_class {
+    display: inline-block;
+}
+/* 総合案内迷子忘れ物選択 */
 
 /* 規約同意真ん中配置 */
 
- /* .agree{
+/* .agree{
 text-align: center;
 } */
 
 /* 規約同意真ん中配置 */
 
-
-
-
-.botton-back{
+.botton-back {
     margin-top: 10%;
 }
 
