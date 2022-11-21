@@ -106,12 +106,11 @@ export const lostChildConverter: FirestoreDataConverter<lostChild> = {
 };
 
 export type storeInfo = {
-
     store_name: string;
     store_logo: string;
     store_detail: string;
     is_resolve: boolean;
-}
+};
 
 export const storeInfoConverter: FirestoreDataConverter<storeInfo> = {
     toFirestore: (storeInfoData: storeInfo) => {
@@ -127,8 +126,8 @@ export const storeInfoConverter: FirestoreDataConverter<storeInfo> = {
         return {
             store_name: data.store_name, //店舗名
             store_logo: data.store_logo, //店舗のロゴ
-            store_detail: data.store_detail   ,//店舗詳細
+            store_detail: data.store_detail, //店舗詳細
             is_resolve: data.is_resolve, //表示・非表表
-        }
-    }
+        };
+    },
 };
