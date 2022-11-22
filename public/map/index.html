@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>project S3</title>
+    </head>
+    <body>
+        <header>
+            <div class="h-menu">
+                <input
+                    id="h-menu_checkbox"
+                    class="h-menuCheckbox"
+                    type="checkbox"
+                />
+                <label class="h-menu_icon" for="h-menu_checkbox"
+                    ><span class="hamburger-icon"></span
+                ></label>
+                <label
+                    id="h-menu_black"
+                    class="h-menuCheckbox"
+                    for="h-menu_checkbox"
+                ></label>
+                <div id="h-menu_content">
+                    <ul>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Log in</a></li>
+                        <li><a href="#">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main style="text-align: center; margin: 0; padding: 0 0 30% 0">
+            <h2>Map</h2>
+            <!-- <div id="canvasWrapper" style="width: 100%; margin: 1% 0"> -->
+            <img
+                id="mapImage"
+                src="./images/map_4.svg"
+                alt=""
+                style="position: absolute"
+            />
+            <canvas style="position: relative"></canvas>
+            <!-- </div> -->
+            <div id="floor-change">
+                <!-- <button id="1" class="floor-select-area">1F</button>
+                <button id="2" class="floor-select-area">2F</button>
+                <button id="3" class="floor-select-area">3F</button> -->
+                <button id="4" class="floor-select-area">4F</button>
+                <button id="5" class="floor-select-area">5F</button>
+                <button id="6" class="floor-select-area">6F</button>
+                <!-- <button id="7" class="floor-select-area">7F</button>
+                <button id="8" class="floor-select-area">8F</button> -->
+            </div>
+        </main>
+        <!-- bottom navigation -->
+        <ul class="bottom-menu">
+            <li>
+                <a href="">
+                    <i class="blogicon-home"></i><br /><span class="mini-text"
+                        >ホーム</span
+                    ></a
+                >
+            </li>
+            <li>
+                <a href="">
+                    <i class="blogicon-twitter"></i><br /><span
+                        class="mini-text"
+                        >店舗</span
+                    ></a
+                >
+            </li>
+            <li>
+                <a href="">
+                    <i class="blogicon-twitter"></i><br /><span
+                        class="mini-text"
+                        >MAP</span
+                    ></a
+                >
+            </li>
+            <li>
+                <a href="">
+                    <i class="blogicon-twitter"></i><br /><span
+                        class="mini-text"
+                        >案内</span
+                    ></a
+                >
+            </li>
+        </ul>
+        <script src="../dist/test.bundle.js"></script>
+        <!-- <script src="../dist/z.bundle.js"></script> -->
+    </body>
+</html>
