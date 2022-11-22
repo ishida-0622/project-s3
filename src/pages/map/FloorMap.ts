@@ -49,9 +49,15 @@ class FloorMap {
                         this.destinationLocationLongitude = val.longitude;
                     }
                 });
-                if (destination && destinationFloor) {
-                    this.dijkstra();
-                }
+                const img = new Image();
+                img.src = `./images/map_${this._floor}.svg`;
+                img.onload = () => {
+                    this.canvas.width = img.width;
+                    this.canvas.height = img.height;
+                    if (destination && destinationFloor) {
+                        this.dijkstra();
+                    }
+                };
             })
             .catch(() => {
                 throw Error("map data acquisition error");
@@ -71,11 +77,6 @@ class FloorMap {
         if (canvas && ctx) {
             this.canvas = canvas;
             this.ctx = ctx;
-            const e = document.getElementById(
-                "canvasWrapper"
-            ) as HTMLDivElement;
-            this.canvas.width = e.offsetWidth;
-            this.canvas.height = e.offsetHeight;
         } else {
             throw Error("canvas is not found");
         }
@@ -88,7 +89,9 @@ class FloorMap {
         img.onload = () => {
             this.canvas.width = img.width;
             this.canvas.height = img.height;
-            this.ctx.drawImage(img, 0, 0);
+            if (this.shopList) {
+                this.dijkstra();
+            }
         };
     }
 
@@ -101,10 +104,8 @@ class FloorMap {
     }
 
     private getCurrentLocation(pos: GeolocationPosition) {
-        // this.currentLocationLatitude = pos.coords.latitude;
-        // this.currentLocationLongitude = pos.coords.longitude;
-        this.currentLocationLatitude = 35.698577332131244;
-        this.currentLocationLongitude = 139.75819614204997;
+        this.currentLocationLatitude = pos.coords.latitude;
+        this.currentLocationLongitude = pos.coords.longitude;
     }
 
     fall(pos: GeolocationPositionError) {
@@ -125,10 +126,8 @@ class FloorMap {
         }
         const nowFloor = this._floor;
         let destinationIds = this.shopList.node.floor[4]
-            .map((val, i) => {
-                return val.name === this._destination ? i : undefined;
-            })
-            .filter((v) => v) as number[];
+            .map((val, i) => (val.name === this._destination ? i : undefined))
+            .filter((v) => v !== undefined) as number[];
 
         const len = this.shopList.node.floor[4].length;
 
@@ -195,7 +194,7 @@ class FloorMap {
                         ? i
                         : undefined
                 )
-                .filter((v) => v) as number[];
+                .filter((v) => v !== undefined) as number[];
 
             while (nowFloor === this._floor) {
                 const { nodes, prev } = f();
@@ -211,7 +210,7 @@ class FloorMap {
                             ? i
                             : undefined
                     )
-                    .filter((v) => v) as number[];
+                    .filter((v) => v !== undefined) as number[];
 
                 index.forEach((v) => {
                     // 経路復元
@@ -225,8 +224,8 @@ class FloorMap {
                     this.show(route);
                 });
 
-                // 5秒停止
-                await sleep(5000);
+                // 3秒停止
+                await sleep(3000);
             }
         } else {
             // 目的地と現在地の階が同じの場合
@@ -238,7 +237,7 @@ class FloorMap {
                     this.currentLocationLongitude,
                     this.destinationLocationLatitude,
                     this.destinationLocationLongitude
-                ) > 0.0002
+                ) > 3
             ) {
                 const { prev } = f();
                 // 経路復元
@@ -250,8 +249,8 @@ class FloorMap {
                 }
                 route.reverse();
                 this.show(route);
-                // 5秒停止
-                await sleep(5000);
+                // 3秒停止
+                await sleep(3000);
             }
         }
     }
@@ -327,6 +326,8 @@ class FloorMap {
             return [pointX, pointY];
         });
 
+        // 描画をリセット
+        this.canvas.width = this.canvas.width;
         if (points.length) {
             let [beforeX, beforeY] = points[0];
             this.ctx.fillStyle = "#f00";
@@ -335,9 +336,11 @@ class FloorMap {
             points.forEach((p, i) => {
                 const [x, y] = p;
                 if (i) {
+                    // 線を引く
                     this.ctx.moveTo(beforeX, beforeY);
                     this.ctx.lineTo(x, y);
                 }
+                // 点を打つ
                 this.ctx.fillRect(x - 5, y - 5, 10, 10);
                 [beforeX, beforeY] = [x, y];
             });
