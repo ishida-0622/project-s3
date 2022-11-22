@@ -5,14 +5,14 @@ const entries = glob.sync("./dist/**/*.tsx");
 module.exports = {
     mode: "production",
     entry: {
-        // test: "./src/pages/map",
+        map: "./src/pages/map",
         login: "./src/pages/login",
         signup: "./src/pages/signup",
         // lostItem: "./src/pages/lostItem",
         lostChild: "./src/pages/lostChild",
         lostChildCustomer: "./src/pages/lostChild/customer",
         shopList: "./src/pages/shopList",
-        lostItemCustomer:"./src/pages/lostItem/customer",
+        lostItemCustomer: "./src/pages/lostItem/customer",
         // z: "./z.js",
     },
     output: {
