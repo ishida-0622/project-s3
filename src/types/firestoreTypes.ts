@@ -129,6 +129,6 @@ export const storeInfoConverter: FirestoreDataConverter<storeInfo> = {
             store_logo: data.store_logo, //店舗のロゴ
             store_detail: data.store_detail   ,//店舗詳細
             is_resolve: data.is_resolve, //表示・非表表
-        }
-    }
+        };
+    },
 };
