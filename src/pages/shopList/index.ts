@@ -8,9 +8,8 @@ let showStore:storeInfo[] = [];
 const main = async () => {
     const element = document.getElementById("UL");
     const element2 = document.getElementById("UL");
-    // const element3 = document.getElementById("UL");
 
-    if (element && element2 && element3) {
+    if (element && element2) {
         const snapshot = await getDocs(
             collection(db, "store_info").withConverter(storeInfoConverter)
         );
