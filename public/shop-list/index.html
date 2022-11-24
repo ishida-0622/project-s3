@@ -24,11 +24,18 @@
             </div>
         </div>
     </header>
+
+    <label>検索<input type="text" id="input-word" value=""></label>
+    <!-- <input type="button" onclick="search()" value="送信"> -->
     <main>検索結果一覧</main>
     <form action="サイトURL" method="get">
-        <input type="text" name="search" placeholder="キーワードを入力">
+        <!-- <input type="text" id="Input" onclick="search()" placeholder="検索したい言葉を入力してください。"> -->
 
-        <div id="element"></div>
+        <div id="UL">
+
+        </div>
+
+
 
         <!-- bottom navigation -->
         <ul class="bottom-menu">
@@ -56,6 +63,7 @@
                     <i class="blogicon-twitter"></i><br><span class="mini-text">案内</span></a>
             </li>
         </ul>
+        </form>
 </body>
 <script src="../dist/shopList.bundle.js"></script>
 </html>
