@@ -5,7 +5,6 @@
         <title>project S3</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../css/style.css" />
-
         <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
     </head>
 
@@ -27,30 +26,36 @@
                 ></label>
                 <div id="h-menu_content">
                     <ul>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="#">Log in</a></li>
+                        <li>
+                            <a href="/signup">Sign up</a>
+                        </li>
+                        <li>
+                            <a href="/login">Log in</a>
+                        </li>
                         <li><a href="#">Log out</a></li>
                     </ul>
                 </div>
             </div>
         </header>
-        <h1>迷子情報</h1>
 
-        <div id="element"></div>
+        <main style="text-align: center">
+            <h2>空席情報</h2>
+            <div style="width: 100%"><img width="100%" src="" alt="" /></div>
+            <button onclick="history.back();return false">戻る</button>
+        </main>
 
         <!-- bottom navigation -->
         <ul class="bottom-menu">
             <li>
-                <!--　↓↓項目1. ホーム 　＃の部分にホームのURLを入れる -->
-                <a href="">
+                <!-- ホーム -->
+                <a href="/">
                     <i class="blogicon-home"></i><br /><span class="mini-text"
                         >ホーム</span
                     ></a
                 >
             </li>
             <li>
-                <!-- ↓↓項目5.　ツイッター ↓↓の部分の書き換えが必要です-->
-                <!-- screen_name=自分のツイッターID" ←＠マーク以降のIDを入れる -->
+                <!-- 店舗 -->
                 <a href="">
                     <i class="blogicon-twitter"></i><br /><span
                         class="mini-text"
@@ -59,8 +64,7 @@
                 >
             </li>
             <li>
-                <!-- ↓↓項目5.　ツイッター ↓↓の部分の書き換えが必要です-->
-                <!-- screen_name=自分のツイッターID" ←＠マーク以降のIDを入れる -->
+                <!-- MAP -->
                 <a href="">
                     <i class="blogicon-twitter"></i><br /><span
                         class="mini-text"
@@ -69,9 +73,10 @@
                 >
             </li>
             <li>
-                <!-- ↓↓項目5.　ツイッター ↓↓の部分の書き換えが必要です-->
-                <!-- screen_name=自分のツイッターID" ←＠マーク以降のIDを入れる -->
-                <a href="">
+                <!-- 総合案内 -->
+                <a
+                    href="C:/Users/s_sato/Desktop/project-s3/public/genenavi.html"
+                >
                     <i class="blogicon-twitter"></i><br /><span
                         class="mini-text"
                         >案内</span
@@ -79,6 +84,6 @@
                 >
             </li>
         </ul>
-        <script src="../dist/lostChildCustomer.bundle.js"></script>
+        <script src="../dist/congestion.bundle.js"></script>
     </body>
 </html>
