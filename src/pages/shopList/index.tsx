@@ -64,10 +64,23 @@ const ShopList = () => {
                             <h3>{shop.store_name}</h3>
                         </div>
                         <p>{shop.store_detail}</p>
+                        {shop.is_camera ? (
+                            <button
+                                onClick={() => {
+                                    location.href = `/congestion?shop_name=${shop.store_name}`;
+                                }}
+                                style={buttonStyle}
+                            >
+                                混雑状況確認
+                            </button>
+                        ) : (
+                            <></>
+                        )}
                         <button
                             onClick={() => {
                                 location.href = `/map?goal=${shop.store_name}&goal_floor=${shop.floor}`;
                             }}
+                            style={buttonStyle}
                         >
                             Map
                         </button>
@@ -76,6 +89,10 @@ const ShopList = () => {
             )}
         </div>
     );
+};
+
+const buttonStyle: React.CSSProperties = {
+    height: "2rem",
 };
 
 const container = document.querySelector("#app")!;
