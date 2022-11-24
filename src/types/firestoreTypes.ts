@@ -109,7 +109,8 @@ export type storeInfo = {
     store_name: string;
     store_logo: string;
     store_detail: string;
-    is_resolve: boolean;
+    floor: number;
+    is_hidden: boolean;
 };
 
 export const storeInfoConverter: FirestoreDataConverter<storeInfo> = {
@@ -118,7 +119,8 @@ export const storeInfoConverter: FirestoreDataConverter<storeInfo> = {
             store_name: storeInfoData.store_name,
             store_logo: storeInfoData.store_logo,
             store_detail: storeInfoData.store_detail,
-            is_resolve: storeInfoData.is_resolve,
+            floor: storeInfoData.floor,
+            is_resolve: storeInfoData.is_hidden,
         };
     },
     fromFirestore: (snapshot, options): storeInfo => {
@@ -127,7 +129,8 @@ export const storeInfoConverter: FirestoreDataConverter<storeInfo> = {
             store_name: data.store_name, //店舗名
             store_logo: data.store_logo, //店舗のロゴ
             store_detail: data.store_detail, //店舗詳細
-            is_resolve: data.is_resolve, //表示・非表表
+            floor: data.floor, // 店舗の階層
+            is_hidden: data.is_hidden, //表示・非表表
         };
     },
 };
