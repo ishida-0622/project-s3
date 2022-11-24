@@ -5,7 +5,6 @@
         <title>project S3</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../css/style.css" />
-        <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
     </head>
 
     <body>
@@ -26,72 +25,50 @@
                 ></label>
                 <div id="h-menu_content">
                     <ul>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="#">Log in</a></li>
-                        <li><a href="#">Log out</a></li>
+                        <li><a href="/signup">Sign up</a></li>
+                        <li><a href="/login">Log in</a></li>
+                        <li><a href="/logout">Log out</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <label>検索<input type="text" id="input-word" value=""></label>
-    <!-- <input type="button" onclick="search()" value="送信"> -->
-    <main>検索結果一覧</main>
-    <form action="サイトURL" method="get">
-        <!-- <input type="text" id="Input" onclick="search()" placeholder="検索したい言葉を入力してください。"> -->
-
-        <div id="UL">
-
-        </div>
-
-
-            <div id="element"></div>
-
-            <!-- bottom navigation -->
-            <ul class="bottom-menu">
-                <li>
-                    <!--　↓↓項目1. ホーム 　＃の部分にホームのURLを入れる -->
-                    <a href="">
-                        <i class="blogicon-home"></i><br /><span
-                            class="mini-text"
-                            >ホーム</span
-                        ></a
-                    >
-                </li>
-                <li>
-                    <!-- ↓↓項目5.　ツイッター ↓↓の部分の書き換えが必要です-->
-                    <!-- screen_name=自分のツイッターID" ←＠マーク以降のIDを入れる -->
-                    <a href="">
-                        <i class="blogicon-twitter"></i><br /><span
-                            class="mini-text"
-                            >店舗</span
-                        ></a
-                    >
-                </li>
-                <li>
-                    <!-- ↓↓項目5.　ツイッター ↓↓の部分の書き換えが必要です-->
-                    <!-- screen_name=自分のツイッターID" ←＠マーク以降のIDを入れる -->
-                    <a href="">
-                        <i class="blogicon-twitter"></i><br /><span
-                            class="mini-text"
-                            >MAP</span
-                        ></a
-                    >
-                </li>
-                <li>
-                    <!-- ↓↓項目5.　ツイッター ↓↓の部分の書き換えが必要です-->
-                    <!-- screen_name=自分のツイッターID" ←＠マーク以降のIDを入れる -->
-                    <a href="">
-                        <i class="blogicon-twitter"></i><br /><span
-                            class="mini-text"
-                            >案内</span
-                        ></a
-                    >
-                </li>
-            </ul>
-        </form>
+        <main>
+            <div id="app"></div>
+        </main>
+        <ul class="bottom-menu">
+            <li>
+                <a href="">
+                    <i class="blogicon-home"></i><br /><span class="mini-text"
+                        >ホーム</span
+                    ></a
+                >
+            </li>
+            <li>
+                <a href="">
+                    <i class="blogicon-twitter"></i><br /><span
+                        class="mini-text"
+                        >店舗</span
+                    ></a
+                >
+            </li>
+            <li>
+                <a href="">
+                    <i class="blogicon-twitter"></i><br /><span
+                        class="mini-text"
+                        >MAP</span
+                    ></a
+                >
+            </li>
+            <li>
+                <a href="">
+                    <i class="blogicon-twitter"></i><br /><span
+                        class="mini-text"
+                        >案内</span
+                    ></a
+                >
+            </li>
+        </ul>
         <script src="../dist/shopList.bundle.js"></script>
-            </form>
-</body>
+    </body>
 </html>
