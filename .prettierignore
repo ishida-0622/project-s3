@@ -1,1 +1,3 @@
 *.json
+*.bundle.js
+!z.json
