@@ -10,6 +10,8 @@ body {
 header {
     padding: 16px;
     background: lightgreen;
+    padding: 16px;
+    background: lightgreen;
 }
 
 .h-menu {
@@ -41,12 +43,14 @@ header {
     bottom: 0;
     width: 32px;
     height: 3px;
-    background: white;
+    background: black;
     cursor: pointer;
 }
+
 .hamburger-icon:before {
     top: 10px;
 }
+
 .hamburger-icon:after {
     top: 20px;
 }
@@ -98,15 +102,18 @@ input:checked ~ .h-menu_icon .hamburger-icon::after {
     top: 10px;
     z-index: 999;
 }
+
 input:checked ~ #h-menu_black {
     display: block;
     opacity: 0.8;
 }
+
 #h-menu_checkbox:checked ~ #h-menu_content {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);
     box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
 }
+
 .h-menu_icon .hamburger-icon,
 .h-menu_icon .hamburger-icon::before,
 .h-menu_icon .hamburger-icon::after,
@@ -124,19 +131,26 @@ input:checked ~ #h-menu_black {
 #h-menu_content ul li {
     border-bottom: solid 1px white;
 }
+
 #h-menu_content li a {
     display: block;
-    color: white;
+    color: black;
     font-size: 14px;
     padding: 24px;
     text-decoration: none;
     transition-duration: 0.2s;
 }
+
 #h-menu_content li a:hover {
     background: white;
 }
 
-/* ハンバーガーメニュー */
+/* 左上表示ハンバーガーメニュー */
+
+/* スマートフォン用下部メニュー */
+.mini-text {
+    font-size: 20px;
+}
 
 /*========================
 　smartphone　bottom menu
@@ -243,6 +257,7 @@ input[type="text"]:focus {
 h1 {
     text-align: center;
 }
+
 /* h1タグの中央揃え */
 
 .btn-submit {
@@ -251,45 +266,94 @@ h1 {
     color: aqua;
 }
 
-.botton-back{
+/* h1タグの中央揃え */
+
+/* 総合案内迷子忘れ物選択 */
+.area {
+    margin: auto;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: center;
+}
+
+.tab_class {
+    width: calc(100% / 2);
+    height: 50%;
+    background-color: darkgrey;
+    line-height: 50px;
+    font-size: 15px;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    order: -1;
+}
+
+input[name="tab_name"] {
+    display: none;
+}
+
+input:checked + .tab_class {
+    background-color: green;
+    color: aliceblue;
+}
+
+.content_class {
+    display: none;
+    width: 100%;
+}
+
+input:checked + .tab_class + .content_class {
+    display: inline-block;
+}
+/* 総合案内迷子忘れ物選択 */
+
+/* 規約同意真ん中配置 */
+
+/* .agree{
+text-align: center;
+} */
+
+/* 規約同意真ん中配置 */
+
+.botton-back {
     margin-top: 10%;
 }
 
-.wrapper{
+.wrapper {
     background: #66cdaa;
-	color: #fff;
-	border: 2px dashed #fff;
-	box-shadow: 0 0 0 10px #7fffd4;
-	padding: 1rem;
-	border-radius: 2px;
-	margin-top: 50vh auto 0;
+    color: #fff;
+    border: 2px dashed #fff;
+    box-shadow: 0 0 0 10px #7fffd4;
+    padding: 1rem;
+    border-radius: 2px;
+    margin-top: 50vh auto 0;
     transform: translateY(10%);
 }
 
-.wrapper .title{
-    display: flex;	
+.wrapper .title {
+    display: flex;
 }
 
-.wrapper .title .image{
+.wrapper .title .image {
     width: 90px;
     height: 90px;
     margin: 5% 0% 0% 10%;
 }
 
-.wrapper .title .shop-name{
-    margin:10% 0% 0% 10%;
+.wrapper .title .shop-name {
+    margin: 10% 0% 0% 10%;
     font-size: 220%;
     font-weight: normal;
 }
 
-.wrapper .expla{
+.wrapper .expla {
     font-size: 130%;
     padding: 0.5em 1em;
     margin: 2em 0;
     border: dashed 2px #6b8e23;
 }
 
-.post{
+.post {
     border: 2px solid #38b48b;
     border-radius: 5px;
     position: relative;
@@ -297,23 +361,23 @@ h1 {
     background-color: #fef4f4;
 }
 
-.post-title{
+.post-title {
     position: absolute;
     right: 60%;
     left: 0;
     top: -1.7em;
     margin-left: 0.5em;
-    padding: 0 .5em;
+    padding: 0 0.5em;
     background: #38b48b;
     color: #fff;
     border-radius: 5px;
 }
 
-.post-date{
+.post-date {
     padding-top: 1em;
     margin: 0.5em;
 }
 
-.post-text{
+.post-text {
     margin: 0.5em;
 }

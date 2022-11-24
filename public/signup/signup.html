@@ -26,33 +26,51 @@
                 ></label>
                 <div id="h-menu_content">
                     <ul>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="#">Log in</a></li>
+                        <li>
+                            <a href="/signup">Sign up</a>
+                        </li>
+                        <li>
+                            <a href="/login">Log in</a>
+                        </li>
                         <li><a href="#">Log out</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
+        <h1>サインアップ</h1>
+        <div class="inputWithIcon">
+            <div class="inputWithIcon">
+                <input type="text" placeholder="Email" />
+                <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+            </div>
 
-    <label>検索<input type="text" id="input-word" value=""></label>
-    <!-- <input type="button" onclick="search()" value="送信"> -->
-    <main>検索結果一覧</main>
-    <form action="サイトURL" method="get">
-        <!-- <input type="text" id="Input" onclick="search()" placeholder="検索したい言葉を入力してください。"> -->
+            <div class="inputWithIcon">
+                <input type="text" placeholder="Password" />
+                <i class="fa fa-phone fa-lg fa-fw" aria-hidden="true"></i>
+            </div>
 
-        <div id="UL">
+            <div class="inputWithIcon">
+                <input type="text" placeholder="Passwordcheck" />
+                <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+            </div>
 
-        </div>
+            <div class="btn-submit">
+                <button>送信</button>
+            </div>
 
-
-            <div id="element"></div>
+            <div class="agree">
+                <li><a href="#">規約内容に同意します</a></li>
+                <label>
+                    <input type="checkbox" name="checkbox-name" value="1" />
+                    同意する
+                </label>
+            </div>
 
             <!-- bottom navigation -->
             <ul class="bottom-menu">
                 <li>
-                    <!--　↓↓項目1. ホーム 　＃の部分にホームのURLを入れる -->
-                    <a href="">
+                    <!-- ホーム -->
+                    <a href="/">
                         <i class="blogicon-home"></i><br /><span
                             class="mini-text"
                             >ホーム</span
@@ -60,8 +78,7 @@
                     >
                 </li>
                 <li>
-                    <!-- ↓↓項目5.　ツイッター ↓↓の部分の書き換えが必要です-->
-                    <!-- screen_name=自分のツイッターID" ←＠マーク以降のIDを入れる -->
+                    <!-- 店舗 -->
                     <a href="">
                         <i class="blogicon-twitter"></i><br /><span
                             class="mini-text"
@@ -70,8 +87,7 @@
                     >
                 </li>
                 <li>
-                    <!-- ↓↓項目5.　ツイッター ↓↓の部分の書き換えが必要です-->
-                    <!-- screen_name=自分のツイッターID" ←＠マーク以降のIDを入れる -->
+                    <!-- MAP -->
                     <a href="">
                         <i class="blogicon-twitter"></i><br /><span
                             class="mini-text"
@@ -80,9 +96,10 @@
                     >
                 </li>
                 <li>
-                    <!-- ↓↓項目5.　ツイッター ↓↓の部分の書き換えが必要です-->
-                    <!-- screen_name=自分のツイッターID" ←＠マーク以降のIDを入れる -->
-                    <a href="">
+                    <!-- 総合案内 -->
+                    <a
+                        href="C:/Users/s_sato/Desktop/project-s3/public/genenavi.html"
+                    >
                         <i class="blogicon-twitter"></i><br /><span
                             class="mini-text"
                             >案内</span
@@ -90,8 +107,6 @@
                     >
                 </li>
             </ul>
-        </form>
-        <script src="../dist/shopList.bundle.js"></script>
-            </form>
-</body>
+        </div>
+    </body>
 </html>

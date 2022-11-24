@@ -10,7 +10,7 @@ const main = async () => {
     const element2 = document.getElementById("UL");
     // const element3 = document.getElementById("UL");
 
-    if (element&&element2) {
+    if (element && element2 && element3) {
         const snapshot = await getDocs(
             collection(db, "store_info").withConverter(storeInfoConverter)
         );
