@@ -5,6 +5,7 @@
         <title>project S3</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../css/style.css" />
+        <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
     </head>
 
     <body>
@@ -25,26 +26,36 @@
                 ></label>
                 <div id="h-menu_content">
                     <ul>
-                        <li><a href="/signup">Sign up</a></li>
-                        <li><a href="/login">Log in</a></li>
-                        <li><a href="/logout">Log out</a></li>
+                        <li>
+                            <a href="/signup">Sign up</a>
+                        </li>
+                        <li>
+                            <a href="/login">Log in</a>
+                        </li>
+                        <li><a href="#">Log out</a></li>
                     </ul>
                 </div>
             </div>
         </header>
 
-        <main>
-            <div id="app"></div>
+        <main style="text-align: center">
+            <h2>空席情報</h2>
+            <div style="width: 100%"><img width="100%" src="" alt="" /></div>
+            <button onclick="history.back();return false">戻る</button>
         </main>
+
+        <!-- bottom navigation -->
         <ul class="bottom-menu">
             <li>
-                <a href="">
+                <!-- ホーム -->
+                <a href="/">
                     <i class="blogicon-home"></i><br /><span class="mini-text"
                         >ホーム</span
                     ></a
                 >
             </li>
             <li>
+                <!-- 店舗 -->
                 <a href="">
                     <i class="blogicon-twitter"></i><br /><span
                         class="mini-text"
@@ -53,6 +64,7 @@
                 >
             </li>
             <li>
+                <!-- MAP -->
                 <a href="">
                     <i class="blogicon-twitter"></i><br /><span
                         class="mini-text"
@@ -61,7 +73,10 @@
                 >
             </li>
             <li>
-                <a href="">
+                <!-- 総合案内 -->
+                <a
+                    href="C:/Users/s_sato/Desktop/project-s3/public/genenavi.html"
+                >
                     <i class="blogicon-twitter"></i><br /><span
                         class="mini-text"
                         >案内</span
@@ -69,6 +84,6 @@
                 >
             </li>
         </ul>
-        <script src="../dist/shopList.bundle.js"></script>
+        <script src="../dist/congestion.bundle.js"></script>
     </body>
 </html>
