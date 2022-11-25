@@ -205,8 +205,7 @@ ul.bottom-menu li {
 }
 
 .bottom-menu li a:hover {
-    color: #fff;
-    /*マウスオーバー時の色*/
+    color: #fff; /*マウスオーバー時の色*/
 }
 
 /* === 展開メニュー === */
@@ -254,12 +253,45 @@ li.menu-width-max ul.menu-second-level li {
     border: none;
 }
 
-.inputWithIcon input[type="text"] {
+/* サインアップ */
+/*Don't forget to add Font Awesome CSS : "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"*/
+input[type="text"] {
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+
+input[type="email"]:focus {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+
+.inputWithIcon input[type="email"] {
     padding-left: 40px;
+    width: 80%;
+}
+
+input[type="password"]:focus {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+
+.inputWithIcon input[type="password"] {
+    padding-left: 40px;
+    width: 80%;
 }
 
 .inputWithIcon {
     position: relative;
+    text-align: center;
 }
 
 /* サインアップ */
@@ -318,15 +350,7 @@ input:checked + .tab_class + .content_class {
 }
 /* 総合案内迷子忘れ物選択 */
 
-/* 規約同意真ん中配置 */
-
-/* .agree{
-text-align: center;
-} */
-
-/* 規約同意真ん中配置 */
-
-.botton-back {
+.botton-back{
     margin-top: 10%;
 }
 
@@ -394,6 +418,9 @@ text-align: center;
     margin: 0.5em;
 }
 
+.btn-submit{
+    text-align: center;
+}
 
 /* 迷子情報、落とし物情報編集 */
 .uk-card-title {
