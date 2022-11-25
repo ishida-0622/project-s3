@@ -189,7 +189,7 @@ ul.bottom-menu li {
     text-decoration: none;
 }
 .bottom-menu li a:hover {
-    color: lightgreen; /*マウスオーバー時の色*/
+    color: white; /*マウスオーバー時の色*/
 }
 /* === 展開メニュー === */
 ul.menu-second-level {
@@ -238,19 +238,32 @@ input[type="text"] {
     transition: 0.3s;
 }
 
-input[type="text"]:focus {
-input[type="text"]:focus {
+
+input[type="email"]:focus {
     border-color: dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
 }
 
-.inputWithIcon input[type="text"] {
-.inputWithIcon input[type="text"] {
+
+.inputWithIcon input[type="email"] {
     padding-left: 40px;
+    width: 80%;
+}
+
+input[type="password"]:focus {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+
+.inputWithIcon input[type="password"] {
+    padding-left: 40px;
+    width: 80%;
 }
 
 .inputWithIcon {
     position: relative;
+    text-align: center;
 }
 
 /* サインアップ */
@@ -310,16 +323,6 @@ h1 {
     display:inline-block;
   }
   /* 総合案内迷子忘れ物選択 */
-
-/* 規約同意真ん中配置 */
-
- /* .agree{
-text-align: center;
-} */
-
-/* 規約同意真ん中配置 */
-
-
 
 
 .botton-back{
@@ -387,4 +390,8 @@ text-align: center;
 
 .post-text{
     margin: 0.5em;
+}
+
+.btn-submit{
+    text-align: center;
 }
