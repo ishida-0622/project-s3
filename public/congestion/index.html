@@ -1,30 +1,22 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8" />
-        <title>project S3</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="../css/style.css" />
-        <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
-    </head>
 
-    <body>
-        <header>
-            <div class="h-menu">
-                <input
-                    id="h-menu_checkbox"
-                    class="h-menuCheckbox"
-                    type="checkbox"
-                />
-                <label class="h-menu_icon" for="h-menu_checkbox"
-                    ><span class="hamburger-icon"></span
-                ></label>
-                <label
-                    id="h-menu_black"
-                    class="h-menuCheckbox"
-                    for="h-menu_checkbox"
-                ></label>
-                <div id="h-menu_content">
+<head>
+    <meta charset="UTF-8" />
+    <title>project S3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
+</head>
+
+<body>
+    <header>
+        <div class="h-menu">
+            <input id="h-menu_checkbox" class="h-menuCheckbox" type="checkbox" />
+            <label class="h-menu_icon" for="h-menu_checkbox"><span class="hamburger-icon"></span></label>
+            <label id="h-menu_black" class="h-menuCheckbox" for="h-menu_checkbox"></label>
+            <div id="h-menu_content">
+                <ul>
                     <ul>
                         <li>
                             <a href="/signup">Sign up</a>
@@ -34,56 +26,40 @@
                         </li>
                         <li><a href="#">Log out</a></li>
                     </ul>
-                </div>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <main style="text-align: center">
-            <h2>空席情報</h2>
-            <div style="width: 100%"><img width="100%" src="" alt="" /></div>
-            <button onclick="history.back();return false">戻る</button>
-        </main>
+    <main style="text-align: center">
+        <h2>空席情報</h2>
+        <div style="width: 100%"><img width="100%" src="" alt="" /></div>
+        <button onclick="history.back();return false">戻る</button>
+    </main>
 
-        <!-- bottom navigation -->
-        <ul class="bottom-menu">
-            <li>
-                <!-- ホーム -->
-                <a href="/">
-                    <i class="blogicon-home"></i><br /><span class="mini-text"
-                        >ホーム</span
-                    ></a
-                >
-            </li>
-            <li>
-                <!-- 店舗 -->
-                <a href="">
-                    <i class="blogicon-twitter"></i><br /><span
-                        class="mini-text"
-                        >店舗</span
-                    ></a
-                >
-            </li>
-            <li>
-                <!-- MAP -->
-                <a href="">
-                    <i class="blogicon-twitter"></i><br /><span
-                        class="mini-text"
-                        >MAP</span
-                    ></a
-                >
-            </li>
-            <li>
-                <!-- 総合案内 -->
-                <a
-                    href="C:/Users/s_sato/Desktop/project-s3/public/genenavi.html"
-                >
-                    <i class="blogicon-twitter"></i><br /><span
-                        class="mini-text"
-                        >案内</span
-                    ></a
-                >
-            </li>
-        </ul>
-        <script src="../dist/congestion.bundle.js"></script>
-    </body>
+    <!-- bottom navigation -->
+    <ul class="bottom-menu">
+        <li>
+            <!-- ホーム -->
+            <a href="/">
+                <i class="blogicon-home"></i><br /><span class="mini-text">ホーム</span></a>
+        </li>
+        <li>
+            <!-- 店舗 -->
+            <a href="/shop-list">
+                <i class="blogicon-twitter"></i><br /><span class="mini-text">店舗</span></a>
+        </li>
+        <li>
+            <!-- MAP -->
+            <a href="/map">
+                <i class="blogicon-twitter"></i><br /><span class="mini-text">MAP</span></a>
+        </li>
+        <li>
+            <!-- 総合案内 -->
+            <a href="./genenavi.html">
+                <i class="blogicon-twitter"></i><br /><span class="mini-text">案内</span></a>
+        </li>
+    </ul>
+    <script src="../dist/congestion.bundle.js"></script>
+</body>
+
 </html>

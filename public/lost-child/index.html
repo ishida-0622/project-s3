@@ -1,93 +1,63 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8" />
-        <title>project S3</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="../css/style.css" />
-        <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
-    </head>
-    <body>
-        <header>
-            <div class="h-menu">
-                <input
-                    id="h-menu_checkbox"
-                    class="h-menuCheckbox"
-                    type="checkbox"
-                />
-                <label class="h-menu_icon" for="h-menu_checkbox"
-                    ><span class="hamburger-icon"></span
-                ></label>
-                <label
-                    id="h-menu_black"
-                    class="h-menuCheckbox"
-                    for="h-menu_checkbox"
-                ></label>
-                <div id="h-menu_content">
-                    <ul>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="#">Log in</a></li>
-                        <li><a href="#">Log out</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
 
-        <div class=""></div>
-        <div class="uk-container uk-padding">
-            <div
-                class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-margin-auto"
-            >
-                <h2 class="uk-card-title">迷子情報</h2>
-                <form
-                    class="uk-form-stacked"
-                    id="commentForm"
-                    onsubmit="return false"
-                >
-                    <div class="uk-margin">
-                        <label for="nickname" class="uk-form-label"
-                            >タイトル</label
-                        >
-                        <div class="uk-form-controls">
-                            <input
-                                id="title"
-                                type="text"
-                                name="nickname"
-                                class="uk-input"
-                                required
-                            />
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="comment" class="uk-form-label"
-                            >コメント</label
-                        >
-                        <div class="uk-form-controls">
-                            <textarea
-                                name="comment"
-                                id="comment"
-                                cols="30"
-                                rows="10"
-                                class="uk-textarea"
-                                required
-                            ></textarea>
-                        </div>
-                    </div>
-                    <div class="uk-margin-large uk-flex uk-flex-center">
-                        <button
-                            type="submit"
-                            id="submit-button"
-                            class="uk-button uk-button-primary"
-                        >
-                            コメントする
-                        </button>
-                    </div>
-                </form>
-                <hr class="uk-divider-icon" />
-                <ul class="uk-comment-list" id="commentContainer"></ul>
+<head>
+    <meta charset="UTF-8" />
+    <title>project S3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
+</head>
+
+<body>
+    <header>
+        <div class="h-menu">
+            <input id="h-menu_checkbox" class="h-menuCheckbox" type="checkbox" />
+            <label class="h-menu_icon" for="h-menu_checkbox"><span class="hamburger-icon"></span></label>
+            <label id="h-menu_black" class="h-menuCheckbox" for="h-menu_checkbox"></label>
+            <div id="h-menu_content">
+                <ul>
+                    <li>
+                        <a href="/signup">Sign up</a>
+                    </li>
+                    <li>
+                        <a href="/login">Log in</a>
+                    </li>
+                    <li><a href="#">Log out</a></li>
+                </ul>
             </div>
         </div>
-        <script src="../dist/lostChild.bundle.js"></script
+    </header>
+
+    <div class=""></div>
+    <div class="uk-container uk-padding">
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-margin-auto">
+            <h2 class="uk-card-title">迷子情報</h2>
+            <form class="uk-form-stacked" id="commentForm" onsubmit="return false">
+                <div class="uk-margin">
+                    <label for="nickname" class="uk-form-label">タイトル</label>
+                    <div class="uk-form-controls">
+                        <input id="title" type="text" name="nickname" class="uk-input" required />
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <label for="comment" class="uk-form-label">コメント</label>
+                    <div class="uk-form-controls">
+                        <textarea name="comment" id="comment" cols="30" rows="10" class="uk-textarea"
+                            required></textarea>
+                    </div>
+                </div>
+                <div class="uk-margin-large uk-flex uk-flex-center">
+                    <button type="submit" id="submit-button" class="uk-button uk-button-primary">
+                        コメントする
+                    </button>
+                </div>
+            </form>
+            <hr class="uk-divider-icon" />
+            <ul class="uk-comment-list" id="commentContainer"></ul>
+        </div>
+    </div>
+    <script src="../dist/lostChild.bundle.js"></script
         <!-- bottom navigation -->
         <ul class="bottom-menu">
             <li>
