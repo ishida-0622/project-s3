@@ -2,7 +2,10 @@ import { auth, db } from "../firebase/firebaseConfig";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import React, { useState } from "react";
 import { adminConverter, user } from "../types/firestoreTypes";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+    createUserWithEmailAndPassword,
+    sendEmailVerification,
+} from "firebase/auth";
 import { createRoot } from "react-dom/client";
 
 const SignUp = () => {
@@ -36,8 +39,11 @@ const SignUp = () => {
             const data: user = {
                 type: "moll_admin",
             };
-            setDoc(doc(db, `users/${uid}`), data).then(() => {
-                location.href = "/admin/";
+            setDoc(doc(db, `users/${uid}`), data);
+            sendEmailVerification(u.user).then(() => {
+                alert(
+                    `${email}に送信されたメールのURLをクリックして認証を完了してください`
+                );
             });
         });
     };
