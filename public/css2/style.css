@@ -1,0 +1,60 @@
+h2 {
+  font-size: 50px;
+  color: lightslategrey;
+  text-align: center;
+}
+
+.moll-edit{
+  display:flex;
+  flex-flow: column;
+  height:300px;
+  margin:0 0 1em;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  color: #212529;
+  border-radius: 1rem;
+}
+
+a.btn-radius-solid {
+  padding:1.3em;
+  margin:1em auto 1.5em;
+  width:40%;
+  border: 1px solid #ccc;
+  background: #f1e767;
+  background: -webkit-gradient(linear, left top, left bottom, from(#dbffdb), to(#f2ffe5));
+  background: -webkit-linear-gradient(top, #dbffdb 0%, #f2ffe5 100%);
+  background: linear-gradient(to bottom, #dbffdb 0%, #f2ffe5 100%);
+  -webkit-box-shadow: inset 1px 1px 1px #fff;
+  box-shadow: inset 1px 1px 1px #fff;
+}
+
+a.btn-radius-solid:hover {
+  padding:1.3em;
+  margin:1em auto 1.5em;
+  width:40%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#dbffdb), to(#f2ffe5));
+  background: -webkit-linear-gradient(bottom, #dbffdb 0%, #f2ffe5 100%);
+  background: linear-gradient(to top, #dbffdb 0%, #f2ffe5 100%);
+}
