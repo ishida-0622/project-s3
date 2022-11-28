@@ -3,7 +3,10 @@ import {
     signInWithEmailAndPassword,
     signOut,
 } from "firebase/auth";
-import { auth } from "../../firebase/firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
+import getLoginUser from "modules/getLoginUser";
+import { userConverter } from "types/firestoreTypes";
+import { auth, db } from "../../firebase/firebaseConfig";
 
 /**
  * ログイン
@@ -46,9 +49,23 @@ if (element) {
             const mail = mailElement.value;
             const pass = passElement.value;
             login(mail, pass)
-                .then((res) => {
+                .then(async (res) => {
                     if (res) {
-                        location.href = "/";
+                        const user = (await getLoginUser())!;
+                        const document = (
+                            await getDoc(
+                                doc(db, `users/${user.uid}`).withConverter(
+                                    userConverter
+                                )
+                            )
+                        ).data()!;
+                        if (document.type === "user") {
+                            location.href = "/";
+                        } else if (document.type === "moll_admin") {
+                            location.href = "/admin/";
+                        } else {
+                            location.href = "/admin/";
+                        }
                     } else {
                         signOut(auth);
                         alert(
