@@ -39,7 +39,10 @@ const ShopList = () => {
                         )
                     );
                 }}
-                style={{ width: "90%" }}
+                style={{
+                    width: "90%",
+                    marginTop: "5%", 
+                }}
             />
             {showShopList.map((shop) =>
                 shop.is_hidden ? (
@@ -53,15 +56,24 @@ const ShopList = () => {
                             margin: "2% auto",
                         }}
                     >
-                        <div style={{ display: "flex" }}>
+                        <div style={{ display:"flex" }}>
                             <div style={{ width: "20%" }}>
                                 <img
                                     width={"100%"}
                                     src={shop.store_logo}
                                     alt="Logo"
+                                    style={{
+                                        marginTop: "10%",
+                                        marginLeft: "20%",
+                                    }}
                                 />
                             </div>
-                            <h3>{shop.store_name}</h3>
+                            <h3 
+                                style={{
+                                    marginLeft: "20%",
+                                }}>
+                                {shop.store_name}
+                            </h3>
                         </div>
                         <p>{shop.store_detail}</p>
                         {shop.is_camera ? (
@@ -70,6 +82,7 @@ const ShopList = () => {
                                     location.href = `/congestion?shop_name=${shop.store_name}`;
                                 }}
                                 style={buttonStyle}
+
                             >
                                 混雑状況確認
                             </button>
@@ -93,6 +106,8 @@ const ShopList = () => {
 
 const buttonStyle: React.CSSProperties = {
     height: "2rem",
+    margin:"3%",
+    color: "green",
 };
 
 const container = document.querySelector("#app")!;
