@@ -34,14 +34,14 @@ const ShopList = () => {
                     setShowShopList(
                         allShopList.filter((v) =>
                             v.store_name.match(
-                                new RegExp(`^${e.target.value}.*$`)
+                                new RegExp(`^.*${e.target.value}.*$`)
                             )
                         )
                     );
                 }}
                 style={{
                     width: "90%",
-                    marginTop: "5%", 
+                    marginTop: "5%",
                 }}
             />
             {showShopList.map((shop) =>
@@ -56,7 +56,7 @@ const ShopList = () => {
                             margin: "2% auto",
                         }}
                     >
-                        <div style={{ display:"flex" }}>
+                        <div style={{ display: "flex" }}>
                             <div style={{ width: "20%" }}>
                                 <img
                                     width={"100%"}
@@ -68,10 +68,11 @@ const ShopList = () => {
                                     }}
                                 />
                             </div>
-                            <h3 
+                            <h3
                                 style={{
                                     marginLeft: "20%",
-                                }}>
+                                }}
+                            >
                                 {shop.store_name}
                             </h3>
                         </div>
@@ -82,7 +83,6 @@ const ShopList = () => {
                                     location.href = `/congestion?shop_name=${shop.store_name}`;
                                 }}
                                 style={buttonStyle}
-
                             >
                                 混雑状況確認
                             </button>
@@ -106,7 +106,7 @@ const ShopList = () => {
 
 const buttonStyle: React.CSSProperties = {
     height: "2rem",
-    margin:"3%",
+    margin: "3%",
     color: "green",
 };
 
