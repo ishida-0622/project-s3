@@ -12,6 +12,7 @@ module.exports = {
         lostChild: "./src/pages/lostChild",
         lostChildCustomer: "./src/pages/lostChild/customer",
         shopList: "./src/pages/shopList",
+        shopEdit: "./src/pages/shopEdit",
         lostItemCustomer: "./src/pages/lostItem/customer",
         congestion: "./src/pages/congestion",
         // z: "./z.js",

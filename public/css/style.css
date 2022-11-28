@@ -88,18 +88,18 @@ header {
 }
 
 /*チェックボックスにチェックが入ったら表示*/
-input:checked~.h-menu_icon .hamburger-icon {
+input:checked ~ .h-menu_icon .hamburger-icon {
     background: transparent;
 }
 
-input:checked~.h-menu_icon .hamburger-icon::before {
+input:checked ~ .h-menu_icon .hamburger-icon::before {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     top: 10px;
     z-index: 999;
 }
 
-input:checked~.h-menu_icon .hamburger-icon::after {
+input:checked ~ .h-menu_icon .hamburger-icon::after {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     top: 10px;
@@ -266,12 +266,10 @@ input[type="text"] {
     transition: 0.3s;
 }
 
-
 input[type="email"]:focus {
     border-color: dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
 }
-
 
 .inputWithIcon input[type="email"] {
     padding-left: 40px;
@@ -282,7 +280,6 @@ input[type="password"]:focus {
     border-color: dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
 }
-
 
 .inputWithIcon input[type="password"] {
     padding-left: 40px;
@@ -350,7 +347,7 @@ input:checked + .tab_class + .content_class {
 }
 /* 総合案内迷子忘れ物選択 */
 
-.botton-back{
+.botton-back {
     margin-top: 10%;
 }
 
@@ -418,7 +415,7 @@ input:checked + .tab_class + .content_class {
     margin: 0.5em;
 }
 
-.btn-submit{
+.btn-submit {
     text-align: center;
 }
 
@@ -429,13 +426,13 @@ input:checked + .tab_class + .content_class {
     margin-bottom: 10px;
 }
 
-.uk-form-stacked{
+.uk-form-stacked {
     margin: auto;
     width: 60%;
     text-align: center;
 }
 
-.uk-input{
+.uk-input {
     border: solid 3px #333;
     border-radius: 10px;
     width: 100%;
@@ -452,7 +449,7 @@ input:checked + .tab_class + .content_class {
     box-shadow: 0 0 8px 0 #66cdaa;
 }
 
-.uk-textarea{
+.uk-textarea {
     resize: none;
     outline: none;
     margin-top: 5px;
@@ -460,7 +457,7 @@ input:checked + .tab_class + .content_class {
     width: 97%;
     height: 150px;
     padding: 1%;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     border: solid 3px #333;
     border-radius: 10px;
 }
@@ -470,7 +467,7 @@ input:checked + .tab_class + .content_class {
     box-shadow: 0 0 8px 0 #66cdaa;
 }
 
-.uk-button-primary{
+.uk-button-primary {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
@@ -479,7 +476,7 @@ input:checked + .tab_class + .content_class {
     color: #333;
     font-size: 15px;
     font-weight: 700;
-    box-shadow: 0 0 10px rgba(0 0 0 / .3);
+    box-shadow: 0 0 10px rgba(0 0 0 / 0.3);
     border-radius: 6px;
     transition: 0.3s;
 }
