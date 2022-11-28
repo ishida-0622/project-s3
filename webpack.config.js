@@ -16,6 +16,7 @@ module.exports = {
         lostItem: "./src/pages/lostItem",
         lostItemCustomer: "./src/pages/lostItem/customer",
         congestion: "./src/pages/congestion",
+        adminCheck: "./src/admin/check.ts",
         // z: "./z.js",
     },
     output: {
