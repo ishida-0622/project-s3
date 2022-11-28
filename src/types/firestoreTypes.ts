@@ -1,8 +1,45 @@
 import { FirestoreDataConverter } from "firebase/firestore";
 
-export type shop = {
-    name: string;
-    is_camera: boolean;
+export type user = {
+    type: "user" | "admin" | "moll_admin";
+};
+
+export const userConverter: FirestoreDataConverter<user> = {
+    toFirestore: (userData: user) => {
+        return {
+            type: userData.type,
+        };
+    },
+    fromFirestore: (snapshot, options?): user => {
+        const data = snapshot.data(options);
+        return {
+            type: data.type,
+        };
+    },
+};
+
+export type admin = {
+    date: string;
+    password: string;
+    uid: string;
+};
+
+export const adminConverter: FirestoreDataConverter<admin> = {
+    toFirestore: (adminData: admin) => {
+        return {
+            date: adminData.date,
+            password: adminData.password,
+            uid: adminData.uid,
+        };
+    },
+    fromFirestore: (snapshot, options?): admin => {
+        const data = snapshot.data(options);
+        return {
+            date: data.date,
+            password: data.password,
+            uid: data.uid,
+        };
+    },
 };
 
 export type map = {
