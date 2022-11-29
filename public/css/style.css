@@ -88,30 +88,30 @@ header {
 }
 
 /*チェックボックスにチェックが入ったら表示*/
-input:checked ~ .h-menu_icon .hamburger-icon {
+input:checked~.h-menu_icon .hamburger-icon {
     background: transparent;
 }
 
-input:checked ~ .h-menu_icon .hamburger-icon::before {
+input:checked~.h-menu_icon .hamburger-icon::before {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     top: 10px;
     z-index: 999;
 }
 
-input:checked ~ .h-menu_icon .hamburger-icon::after {
+input:checked~.h-menu_icon .hamburger-icon::after {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     top: 10px;
     z-index: 999;
 }
 
-input:checked ~ #h-menu_black {
+input:checked~#h-menu_black {
     display: block;
     opacity: 0.8;
 }
 
-#h-menu_checkbox:checked ~ #h-menu_content {
+#h-menu_checkbox:checked~#h-menu_content {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);
     box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
@@ -205,7 +205,8 @@ ul.bottom-menu li {
 }
 
 .bottom-menu li a:hover {
-    color: #fff; /*マウスオーバー時の色*/
+    color: #fff;
+    /*マウスオーバー時の色*/
 }
 
 /* === 展開メニュー === */
@@ -332,7 +333,7 @@ input[name="tab_name"] {
     display: none;
 }
 
-input:checked + .tab_class {
+input:checked+.tab_class {
     background-color: green;
     color: aliceblue;
 }
@@ -342,9 +343,10 @@ input:checked + .tab_class {
     width: 100%;
 }
 
-input:checked + .tab_class + .content_class {
+input:checked+.tab_class+.content_class {
     display: inline-block;
 }
+
 /* 総合案内迷子忘れ物選択 */
 
 .botton-back {
@@ -484,5 +486,87 @@ input:checked + .tab_class + .content_class {
 .uk-button-primary:hover {
     text-decoration: none;
     background-color: #7fffd4;
-    box-shadow: 0 0 10px rgba(0 0 0 / 0);
+}
+
+/* 一般ユーザようのログイン */
+
+.login {
+    width: 100%;
+    margin: 16px auto;
+    font-size: 16px;
+    margin: 0;
+    background-color: lightgreen;
+}
+
+.login-header,
+.login p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.login-triangle {
+    width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    border: 100% solid transparent;
+    border-bottom-color: lightgreen;
+}
+
+.login-header {
+    background: lightgreen;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+}
+
+.login-container {
+    background: #ebebeb;
+    padding: 75px;
+}
+
+.login p {
+    padding: 16px;
+}
+
+.login input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+    background: #fff;
+    border-color: #fff;
+    color: #555;
+}
+
+
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+    border-color: #fff;
+}
+
+.login input[type="submit"] {
+    background: lightgreen;
+    border-color: transparent;
+    color: rgb(7, 7, 7);
+    cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+    background: lightgreen;
+}
+
+.login input[type="submit"]:focus {
+    border-color: lightgreen;
 }
