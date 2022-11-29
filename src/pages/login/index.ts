@@ -4,8 +4,8 @@ import {
     signOut,
 } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import getLoginUser from "modules/getLoginUser";
-import { userConverter } from "types/firestoreTypes";
+import getLoginUser from "../../modules/getLoginUser";
+import { userConverter } from "../../types/firestoreTypes";
 import { auth, db } from "../../firebase/firebaseConfig";
 
 /**
@@ -58,7 +58,8 @@ if (element) {
                                     userConverter
                                 )
                             )
-                        ).data()!;
+                        ).data();
+                        if (!document) return;
                         if (document.type === "user") {
                             location.href = "/";
                         } else if (document.type === "moll_admin") {
