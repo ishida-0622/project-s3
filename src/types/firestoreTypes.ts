@@ -60,11 +60,37 @@ export type map = {
                 is_down_escalator: boolean;
                 is_stairs: boolean;
             }[];
+            5: {
+                name: string;
+                // id: number;
+                latitude: number;
+                longitude: number;
+                is_elevator: boolean;
+                is_up_escalator: boolean;
+                is_down_escalator: boolean;
+                is_stairs: boolean;
+            }[];
+            6: {
+                name: string;
+                // id: number;
+                latitude: number;
+                longitude: number;
+                is_elevator: boolean;
+                is_up_escalator: boolean;
+                is_down_escalator: boolean;
+                is_stairs: boolean;
+            }[];
         };
     };
     edge: {
         floor: {
             4: {
+                to: number[];
+            }[];
+            5: {
+                to: number[];
+            }[];
+            6: {
                 to: number[];
             }[];
         };
