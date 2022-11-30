@@ -88,30 +88,30 @@ header {
 }
 
 /*チェックボックスにチェックが入ったら表示*/
-input:checked~.h-menu_icon .hamburger-icon {
+input:checked ~ .h-menu_icon .hamburger-icon {
     background: transparent;
 }
 
-input:checked~.h-menu_icon .hamburger-icon::before {
+input:checked ~ .h-menu_icon .hamburger-icon::before {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     top: 10px;
     z-index: 999;
 }
 
-input:checked~.h-menu_icon .hamburger-icon::after {
+input:checked ~ .h-menu_icon .hamburger-icon::after {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     top: 10px;
     z-index: 999;
 }
 
-input:checked~#h-menu_black {
+input:checked ~ #h-menu_black {
     display: block;
     opacity: 0.8;
 }
 
-#h-menu_checkbox:checked~#h-menu_content {
+#h-menu_checkbox:checked ~ #h-menu_content {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);
     box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
@@ -333,7 +333,7 @@ input[name="tab_name"] {
     display: none;
 }
 
-input:checked+.tab_class {
+input:checked + .tab_class {
     background-color: green;
     color: aliceblue;
 }
@@ -343,7 +343,7 @@ input:checked+.tab_class {
     width: 100%;
 }
 
-input:checked+.tab_class+.content_class {
+input:checked + .tab_class + .content_class {
     display: inline-block;
 }
 
@@ -549,7 +549,6 @@ input:checked+.tab_class+.content_class {
     border-color: #fff;
     color: #555;
 }
-
 
 .login input[type="email"]:focus,
 .login input[type="password"]:focus {
