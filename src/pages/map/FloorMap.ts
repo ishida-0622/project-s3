@@ -4,9 +4,11 @@ import { map, mapConverter } from "../../types/firestoreTypes";
 import sleep from "../../modules/sleep";
 import distance from "../../modules/distance";
 
+export type floor = 4 | 5 | 6;
+
 class FloorMap {
     /** 現在の階層 */
-    private _floor = 1;
+    private _floor: floor = 4;
     private shopList!: map;
     /** 現在位置の緯度 */
     private currentLocationLatitude: number = 0;
@@ -30,7 +32,7 @@ class FloorMap {
      * @param destinationFloor 目的地の階
      */
     constructor(
-        floor: number,
+        floor: floor,
         destination: string | null = null,
         destinationFloor: number | null = null
     ) {
@@ -43,7 +45,7 @@ class FloorMap {
             .then((res) => {
                 // 成功時、クラス変数を初期化
                 this.shopList = res.data()!;
-                this.shopList.node.floor[4].forEach((val) => {
+                this.shopList.node.floor[this._floor].forEach((val) => {
                     if (val.name === this._destination) {
                         this.destinationLocationLatitude = val.latitude;
                         this.destinationLocationLongitude = val.longitude;
@@ -82,7 +84,7 @@ class FloorMap {
         }
     }
 
-    set floor(floor: number) {
+    set floor(floor: floor) {
         this._floor = floor;
         const img = new Image();
         img.src = `./images/map_${this._floor}.svg`;
@@ -125,18 +127,18 @@ class FloorMap {
             return;
         }
         const nowFloor = this._floor;
-        let destinationIds = this.shopList.node.floor[4]
+        let destinationIds = this.shopList.node.floor[this._floor]
             .map((val, i) => (val.name === this._destination ? i : undefined))
             .filter((v) => v !== undefined) as number[];
 
-        const len = this.shopList.node.floor[4].length;
+        const len = this.shopList.node.floor[this._floor].length;
 
         const f = () => {
             let min = 10e18;
             let id: number = -1;
             // 現在地に一番近いnodeを探索
             // TODO:4
-            this.shopList.node.floor[4].forEach((v, i) => {
+            this.shopList.node.floor[this._floor].forEach((v, i) => {
                 const tmp = distance(
                     this.currentLocationLatitude,
                     this.currentLocationLongitude,
@@ -184,7 +186,7 @@ class FloorMap {
 
         // 目的地と現在地の階が同じでない場合
         if (this._floor !== this._destinationFloor) {
-            destinationIds = this.shopList.node.floor[4]
+            destinationIds = this.shopList.node.floor[this._floor]
                 .map((v, i) =>
                     v.is_elevator ||
                     v.is_stairs ||
@@ -256,7 +258,7 @@ class FloorMap {
     }
 
     show(route: number[] = []) {
-        const a = this.shopList.node.floor[4];
+        const a = this.shopList.node.floor[this._floor];
         // Map画像を長方形abcdとした際のあれのあれ
         /** 横のメートル */
         const ab = 15;
