@@ -1,4 +1,4 @@
-import FloorMap from "./FloorMap";
+import FloorMap, { floor } from "./FloorMap";
 
 const main = async () => {
     const params = new URL(location.href).searchParams;
@@ -7,8 +7,7 @@ const main = async () => {
         params.get("goal_floor") && isFinite(Number(params.get("goal_floor")))
             ? Number(params.get("goal_floor"))
             : null;
-    // TODO:6
-    const floorMap = new FloorMap(6, goal, goalFloor);
+    const floorMap = new FloorMap(4, goal, goalFloor);
 
     /** 階層選択ボタン */
     const floorSelectButtons = document.querySelectorAll(
@@ -23,7 +22,7 @@ const main = async () => {
         element.addEventListener("click", () => {
             const id = Number(element.id);
             if (isFinite(id)) {
-                floorMap.floor = id;
+                floorMap.floor = id as floor;
                 (
                     document.getElementById("mapImage") as HTMLImageElement
                 ).src = `./images/map_${id}.svg`;
