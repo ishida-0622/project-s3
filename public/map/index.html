@@ -38,13 +38,16 @@
         </header>
         <main style="text-align: center; margin: 0; padding: 0 0 30% 0">
             <h2>Map</h2>
-            <img
-                id="mapImage"
-                src="./images/map_4.svg"
-                alt=""
-                style="position: absolute"
-            />
-            <canvas style="position: relative"></canvas>
+            <div style="position: relative; width: 100%">
+                <img id="mapImage" src="./images/map_4.svg" alt="" />
+                <canvas
+                    style="
+                        position: absolute;
+                        left: calc((100% - 241px) / 2);
+                        top: 0;
+                    "
+                ></canvas>
+            </div>
             <div id="floor-change">
                 <!-- <button id="1" class="floor-select-area">1F</button>
                 <button id="2" class="floor-select-area">2F</button>
