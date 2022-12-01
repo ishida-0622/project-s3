@@ -119,6 +119,7 @@ export const mapConverter: FirestoreDataConverter<map> = {
 
 export type lostItem = {
     date: string;
+    title: string;
     text: string;
     is_resolve: boolean;
 };
@@ -127,6 +128,7 @@ export const lostItemConverter: FirestoreDataConverter<lostItem> = {
     toFirestore: (lostItemData: lostItem) => {
         return {
             date: lostItemData.date,
+            title: lostItemData.title,
             text: lostItemData.text,
             is_resolve: lostItemData.is_resolve,
         };
@@ -135,6 +137,7 @@ export const lostItemConverter: FirestoreDataConverter<lostItem> = {
         const data = snapshot.data(options);
         return {
             date: data.date,
+            title: data.title,
             text: data.text,
             is_resolve: data.is_resolve,
         };
