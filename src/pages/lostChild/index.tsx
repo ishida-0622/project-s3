@@ -7,6 +7,8 @@ import useLostChild from "../../hooks/useLostChild";
 import Modal from "react-modal";
 import getNowDate from "../../modules/getNowDate";
 
+Modal.setAppElement("#app");
+
 const LostChild = () => {
     const { lostChild, getLostChild, isLoading, error } = useLostChild();
     if (isLoading) getLostChild();

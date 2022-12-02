@@ -7,6 +7,8 @@ import useLostItem from "../../hooks/useLostItem";
 import Modal from "react-modal";
 import getNowDate from "../../modules/getNowDate";
 
+Modal.setAppElement("#app");
+
 const LostItem = () => {
     const { lostItems, getLostItems, isLoading, error } = useLostItem();
     if (isLoading) getLostItems();
