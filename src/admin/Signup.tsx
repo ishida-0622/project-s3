@@ -69,7 +69,10 @@ const SignUp = () => {
                     <h2>Sign Up</h2>
                     <p>
                         <label>
-                            メールアドレス
+                            <p
+                            style={{
+                                textAlign:"center",
+                            }}>メールアドレス</p>
                             <input
                                 type="email"
                                 value={email}
@@ -78,9 +81,12 @@ const SignUp = () => {
                             />
                         </label>
                     </p>
-                    <p>
+                    <p
+                    style={{
+                        textAlign:"center",
+                    }}>
                         <label>
-                            パスワード
+                            <p>パスワード</p>
                             <input
                                 type="password"
                                 value={password}
@@ -89,9 +95,12 @@ const SignUp = () => {
                             />
                         </label>
                     </p>
-                    <p>
+                    <p
+                    style={{
+                        textAlign:"center",
+                    }}  >
                         <label>
-                            パスワード(再入力)
+                            <p>パスワード(再入力)</p>
                             <input
                                 type="password"
                                 value={rePassword}
