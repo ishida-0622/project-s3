@@ -27,20 +27,20 @@ const LostChild = () => {
                 <h2>現在迷子情報はありません</h2>
             ) : (
                 <>
-                    {lostChild.map((item) => {
+                    {lostChild.map((child) => {
                         return (
                             <div
-                                key={item.id}
+                                key={child.id}
                                 style={{
                                     border: "solid 1px",
                                     width: "80%",
                                     margin: "1% 10%",
                                 }}
                             >
-                                <h2>{item.title}</h2>
-                                <span>{item.text}</span>
+                                <h2>{child.title}</h2>
+                                <span>{child.text}</span>
                                 <br />
-                                <span>{item.date}</span>
+                                <span>{child.date}</span>
                                 &emsp;
                                 <button
                                     onClick={() => {
@@ -53,7 +53,7 @@ const LostChild = () => {
                                         const d: Pick<lostChild, "is_resolve"> =
                                             { is_resolve: true };
                                         updateDoc(
-                                            doc(db, `lost_item/${item.id}`),
+                                            doc(db, `lost_child/${child.id}`),
                                             d
                                         ).then(() => {
                                             getLostChild();
@@ -80,7 +80,7 @@ const LostChild = () => {
                             text: text,
                             is_resolve: false,
                         };
-                        addDoc(collection(db, "lost_item"), data).then(() => {
+                        addDoc(collection(db, "lost_child"), data).then(() => {
                             setIsModalOpen(false);
                             setTitle("");
                             setText("");
