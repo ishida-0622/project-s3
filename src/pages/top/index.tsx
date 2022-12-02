@@ -6,7 +6,7 @@ import { news, newsConverter } from "../../types/firestoreTypes";
 import News from "./News";
 
 const Top = () => {
-    const [news, setNews] = useState<news[]>([]);
+    const [news, setNews] = useState<(news & { id: string })[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     useLayoutEffect(() => {
         (async () => {
@@ -15,7 +15,11 @@ const Top = () => {
                     await getDocs(
                         collection(db, "news").withConverter(newsConverter)
                     )
-                ).docs.map((v) => v.data())
+                ).docs
+                    .map((v) => {
+                        return { ...v.data(), id: v.id };
+                    })
+                    .sort((a, b) => (a.date < b.date ? 1 : -1))
             );
         })();
         setIsLoading(false);
@@ -30,10 +34,11 @@ const Top = () => {
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
                     {news.map((val) => (
                         <News
-                            key={val.title + val.image}
+                            key={val.id}
                             title={val.title}
                             text={val.text}
                             image={val.image}
+                            date={val.date}
                         />
                     ))}
                 </div>
