@@ -203,3 +203,30 @@ export const storeInfoConverter: FirestoreDataConverter<storeInfo> = {
         };
     },
 };
+
+export type news = {
+    title: string;
+    text: string;
+    image: string;
+    date: string;
+};
+
+export const newsConverter: FirestoreDataConverter<news> = {
+    toFirestore: (newsData: news) => {
+        return {
+            title: newsData.title,
+            text: newsData.text,
+            image: newsData.image,
+            date: newsData.date,
+        };
+    },
+    fromFirestore: (snapshot, options): news => {
+        const data = snapshot.data(options);
+        return {
+            title: data.title,
+            text: data.text,
+            image: data.image,
+            date: data.date,
+        };
+    },
+};
