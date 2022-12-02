@@ -16,6 +16,7 @@ module.exports = {
         congestion: "./src/pages/congestion",
         adminCheck: "./src/admin/check.ts",
         information: "./src/pages/information",
+        top: "./src/pages/top",
         // z: "./z.js",
     },
     output: {
