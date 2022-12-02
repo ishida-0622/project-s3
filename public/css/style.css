@@ -389,6 +389,7 @@ input:checked + .tab_class + .content_class {
 
 /* 迷子情報、落とし物情報閲覧 */
 .post {
+    text-align: left;
     border: 2px solid #38b48b;
     border-radius: 5px;
     position: relative;
@@ -398,7 +399,6 @@ input:checked + .tab_class + .content_class {
 
 .post-title {
     position: absolute;
-    right: 60%;
     left: 0;
     top: -1.7em;
     margin-left: 0.5em;
