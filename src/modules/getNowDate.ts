@@ -1,3 +1,7 @@
+/**
+ * 現在時刻をyyyy-MM-dd hh:mm:ssで返す関数
+ * @returns yyyy-MM-dd hh:mm:ss
+ */
 const getNowDate = () => {
     const date = new Date();
     const str =
