@@ -1,29 +1,11 @@
-import { db } from "../../firebase/firebaseConfig";
-import { collection, getDocs } from "firebase/firestore";
-import React, { useLayoutEffect, useState } from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
-import { news, newsConverter } from "../../types/firestoreTypes";
 import News from "./News";
+import useNews from "../../hooks/useNews";
 
 const Top = () => {
-    const [news, setNews] = useState<(news & { id: string })[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
-    useLayoutEffect(() => {
-        (async () => {
-            setNews(
-                (
-                    await getDocs(
-                        collection(db, "news").withConverter(newsConverter)
-                    )
-                ).docs
-                    .map((v) => {
-                        return { ...v.data(), id: v.id };
-                    })
-                    .sort((a, b) => (a.date < b.date ? 1 : -1))
-            );
-        })();
-        setIsLoading(false);
-    }, []);
+    const { news, getNews, isLoading } = useNews();
+    if (isLoading) getNews();
 
     return (
         <main>
