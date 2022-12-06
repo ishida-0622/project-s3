@@ -17,6 +17,7 @@ module.exports = {
         adminCheck: "./src/admin/check.ts",
         information: "./src/pages/information",
         top: "./src/pages/top",
+        homeEdit: "./src/admin/HomeEdit",
         // z: "./z.js",
     },
     output: {
