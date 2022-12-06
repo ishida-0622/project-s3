@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { news } from "../../types/firestoreTypes";
 import Modal from "react-modal";
 
