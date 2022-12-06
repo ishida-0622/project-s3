@@ -25,7 +25,6 @@ const useLostItem = () => {
                     })
                     .sort((a, b) => (a.date > b.date ? 1 : -1))
             );
-            setIsLoading(false);
         } catch (e) {
             if (e instanceof FirebaseError) {
                 setError(e.code);
@@ -34,6 +33,8 @@ const useLostItem = () => {
             } else {
                 setError("Error");
             }
+        } finally {
+            setIsLoading(false);
         }
     }, []);
 
