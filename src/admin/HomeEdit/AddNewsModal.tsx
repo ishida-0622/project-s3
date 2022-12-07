@@ -29,7 +29,6 @@ const AddNewsModal = (props: {
             >
                 <form
                     onSubmit={(e) => {
-                        console.log("submit");
                         e.preventDefault();
                         const data: news = {
                             title: title,
@@ -37,7 +36,6 @@ const AddNewsModal = (props: {
                             image: image,
                             date: getNowDate(),
                         };
-                        console.log(`data`);
                         addDoc(collection(db, "news"), data)
                             .then(() => {
                                 if (props.successFunc) props.successFunc();
@@ -45,12 +43,9 @@ const AddNewsModal = (props: {
                                 setTitle("");
                                 setText("");
                                 setImage("");
-                                console.log("success");
                             })
                             .catch((e) => {
                                 if (props.failFunc) props.failFunc(e);
-                                console.log("fail");
-                                console.log(e.code);
                             });
                     }}
                 >
