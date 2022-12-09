@@ -15,7 +15,7 @@ const main = async () => {
     ) as NodeListOf<HTMLButtonElement>;
 
     if (!floorSelectButtons) {
-        throw Error("floor select button is not found");
+        throw new Error("floor select button is not found");
     }
 
     floorSelectButtons.forEach((element) => {
@@ -27,7 +27,7 @@ const main = async () => {
                     document.getElementById("mapImage") as HTMLImageElement
                 ).src = `./images/map_${id}.svg`;
             } else {
-                throw Error("floor select button id is not number");
+                throw new Error("floor select button id is not number");
             }
         });
     });

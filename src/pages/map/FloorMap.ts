@@ -62,7 +62,7 @@ class FloorMap {
                 };
             })
             .catch(() => {
-                throw Error("map data acquisition error");
+                throw new Error("map data acquisition error");
             });
 
         // 現在地の追跡開始
@@ -80,7 +80,7 @@ class FloorMap {
             this.canvas = canvas;
             this.ctx = ctx;
         } else {
-            throw Error("canvas is not found");
+            throw new Error("canvas is not found");
         }
     }
 
