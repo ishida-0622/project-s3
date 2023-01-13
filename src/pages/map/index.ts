@@ -50,7 +50,10 @@ searchBar.onblur = async () => {
         await getDocs(
             collection(db, "store_info").withConverter(storeInfoConverter)
         )
-    ).docs.map((v) => v.data());
+    ).docs
+        .map((v) => v.data())
+        .sort((a, b) => (a.store_name > b.store_name ? 1 : -1))
+        .sort((a, b) => a.floor - b.floor);
     shopSearch("");
 })();
 
