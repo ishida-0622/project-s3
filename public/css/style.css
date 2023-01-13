@@ -6,6 +6,10 @@ body {
     border: none;
 }
 
+main {
+    margin-bottom: 25%;
+}
+
 /* ハンバーガーメニュー */
 
 header {
