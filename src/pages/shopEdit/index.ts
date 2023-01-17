@@ -29,6 +29,13 @@ const main = async () => {
             imgInput.accept = "image/*";
             imgInput.onchange = () => {
                 const file = imgInput.files![0];
+                if (file.size > 1024 ** 2) {
+                    alert(
+                        "ファイルのサイズが大きすぎます\n1MB以内にしてください"
+                    );
+                    imgInput.value = "";
+                    return;
+                }
                 const reader = new FileReader();
                 reader.onload = (e) => {
                     const url = e.target?.result;
@@ -72,46 +79,61 @@ const main = async () => {
         "submit"
     ) as HTMLButtonElement | null;
     if (button) {
-        button.onclick = () => {
-            shopList.forEach((v) => {
-                const element = document.getElementById(
-                    v.key
-                ) as HTMLDivElement;
-                const image = (
-                    element.childNodes[0].childNodes[0] as HTMLImageElement
-                ).src;
-                const shopName = (
-                    element.childNodes[1].childNodes[0] as HTMLInputElement
-                ).value;
-                const shopDetail = (
-                    element.childNodes[1].childNodes[1] as HTMLTextAreaElement
-                ).value;
-                const isHidden = (
-                    element.childNodes[1].childNodes[2]
-                        .childNodes[1] as HTMLInputElement
-                ).checked;
-                if (image && shopName && shopDetail && isHidden !== undefined) {
-                    const updateData: Pick<
-                        storeInfo,
-                        | "store_name"
-                        | "store_logo"
-                        | "store_detail"
-                        | "is_hidden"
-                    > = {
-                        store_name: shopName,
-                        store_logo: image,
-                        store_detail: shopDetail,
-                        is_hidden: isHidden,
-                    };
-                    updateDoc(doc(db, `store_info/${v.key}`), updateData)
-                        .then(() => {
-                            location.href = "/admin/";
-                        })
-                        .catch((e) => {
-                            alert(`更新に失敗しました\n${e.code}`);
+        button.onclick = async () => {
+            let isSuccess = true;
+            let errorCode = "";
+            await Promise.all(
+                shopList.map(async (v) => {
+                    const element = document.getElementById(
+                        v.key
+                    ) as HTMLDivElement;
+                    const image = (
+                        element.childNodes[0].childNodes[0] as HTMLImageElement
+                    ).src;
+                    const shopName = (
+                        element.childNodes[1].childNodes[0] as HTMLInputElement
+                    ).value;
+                    const shopDetail = (
+                        element.childNodes[1]
+                            .childNodes[1] as HTMLTextAreaElement
+                    ).value;
+                    const isHidden = (
+                        element.childNodes[1].childNodes[2]
+                            .childNodes[1] as HTMLInputElement
+                    ).checked;
+                    if (
+                        image &&
+                        shopName &&
+                        shopDetail &&
+                        isHidden !== undefined
+                    ) {
+                        const updateData: Pick<
+                            storeInfo,
+                            | "store_name"
+                            | "store_logo"
+                            | "store_detail"
+                            | "is_hidden"
+                        > = {
+                            store_name: shopName,
+                            store_logo: image,
+                            store_detail: shopDetail,
+                            is_hidden: isHidden,
+                        };
+                        return updateDoc(
+                            doc(db, `store_info/${v.key}`),
+                            updateData
+                        ).catch((e) => {
+                            isSuccess = false;
+                            errorCode = e.code;
                         });
-                }
-            });
+                    }
+                })
+            );
+            if (isSuccess) {
+                location.href = "/admin";
+            } else {
+                alert(`更新に失敗しました\n${errorCode}`);
+            }
         };
     }
 };

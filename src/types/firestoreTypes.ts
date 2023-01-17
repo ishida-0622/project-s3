@@ -119,6 +119,7 @@ export const mapConverter: FirestoreDataConverter<map> = {
 
 export type lostItem = {
     date: string;
+    title: string;
     text: string;
     is_resolve: boolean;
 };
@@ -127,6 +128,7 @@ export const lostItemConverter: FirestoreDataConverter<lostItem> = {
     toFirestore: (lostItemData: lostItem) => {
         return {
             date: lostItemData.date,
+            title: lostItemData.title,
             text: lostItemData.text,
             is_resolve: lostItemData.is_resolve,
         };
@@ -135,6 +137,7 @@ export const lostItemConverter: FirestoreDataConverter<lostItem> = {
         const data = snapshot.data(options);
         return {
             date: data.date,
+            title: data.title,
             text: data.text,
             is_resolve: data.is_resolve,
         };
@@ -197,6 +200,33 @@ export const storeInfoConverter: FirestoreDataConverter<storeInfo> = {
             floor: data.floor, // 店舗の階層
             is_camera: data.is_camera, // 混雑状況カメラの有無
             is_hidden: data.is_hidden, //表示・非表表
+        };
+    },
+};
+
+export type news = {
+    title: string;
+    text: string;
+    image: string;
+    date: string;
+};
+
+export const newsConverter: FirestoreDataConverter<news> = {
+    toFirestore: (newsData: news) => {
+        return {
+            title: newsData.title,
+            text: newsData.text,
+            image: newsData.image,
+            date: newsData.date,
+        };
+    },
+    fromFirestore: (snapshot, options): news => {
+        const data = snapshot.data(options);
+        return {
+            title: data.title,
+            text: data.text,
+            image: data.image,
+            date: data.date,
         };
     },
 };

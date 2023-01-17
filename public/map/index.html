@@ -37,7 +37,28 @@
             </div>
         </header>
         <main style="text-align: center; margin: 0; padding: 0 0 30% 0">
-            <h2>Map</h2>
+            <h2 style="margin-bottom: 0">Map</h2>
+            <div id="search">
+                <input
+                    type="text"
+                    name="search-bar"
+                    id="search-bar"
+                    placeholder="店名を入力して検索"
+                    style="margin-bottom: 0"
+                />
+                <div
+                    id="search-result"
+                    style="
+                        display: none;
+                        width: 100%;
+                        position: absolute;
+                        /* border: solid 1px; */
+                        border-bottom: solid 1px;
+                        background-color: #fff;
+                        z-index: 1;
+                    "
+                ></div>
+            </div>
             <div style="position: relative; width: 100%">
                 <img id="mapImage" src="./images/map_4.svg" alt="" />
                 <canvas
@@ -89,7 +110,7 @@
             </li>
             <li>
                 <!-- 総合案内 -->
-                <a href="/genenavi.html">
+                <a href="/information">
                     <i class="blogicon-twitter"></i><br /><span
                         class="mini-text"
                         >案内</span

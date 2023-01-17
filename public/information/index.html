@@ -4,7 +4,8 @@
         <meta charset="UTF-8" />
         <title>project S3</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="../../css/style.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
     </head>
 
     <body>
@@ -25,27 +26,31 @@
                 ></label>
                 <div id="h-menu_content">
                     <ul>
-                        <li><a href="/signup">Sign up</a></li>
-                        <li><a href="/login">Log in</a></li>
+                        <li>
+                            <a href="/signup">Sign up</a>
+                        </li>
+                        <li>
+                            <a href="/login">Log in</a>
+                        </li>
                         <li><a href="#">Log out</a></li>
                     </ul>
                 </div>
             </div>
         </header>
-        <h1>迷子情報</h1>
 
-        <div id="element"></div>
-
+        <div id="app"></div>
         <ul class="bottom-menu">
             <li>
-                <a href="">
+                <!-- ホーム -->
+                <a href="/">
                     <i class="blogicon-home"></i><br /><span class="mini-text"
                         >ホーム</span
                     ></a
                 >
             </li>
             <li>
-                <a href="">
+                <!-- 店舗 -->
+                <a href="/shop-list">
                     <i class="blogicon-twitter"></i><br /><span
                         class="mini-text"
                         >店舗</span
@@ -53,7 +58,8 @@
                 >
             </li>
             <li>
-                <a href="">
+                <!-- MAP -->
+                <a href="/map">
                     <i class="blogicon-twitter"></i><br /><span
                         class="mini-text"
                         >MAP</span
@@ -61,7 +67,8 @@
                 >
             </li>
             <li>
-                <a href="">
+                <!-- 総合案内 -->
+                <a href="/information">
                     <i class="blogicon-twitter"></i><br /><span
                         class="mini-text"
                         >案内</span
@@ -69,6 +76,6 @@
                 >
             </li>
         </ul>
-        <script src="../../dist/lostChildCustomer.bundle.js"></script>
+        <script src="../dist/information.bundle.js"></script>
     </body>
 </html>

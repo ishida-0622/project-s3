@@ -18,11 +18,11 @@ const SignUp = () => {
     const adminPasswordCheck = (password: string) => {
         getDoc(doc(db, "admin/admin").withConverter(adminConverter)).then(
             (d) => {
-                const document = d.data();
-                if (!document) {
-                    throw Error("");
+                const documentData = d.data();
+                if (!documentData) {
+                    throw new Error("admin document is not found");
                 }
-                if (document.password === password) {
+                if (documentData.password === password) {
                     setIsVerified(true);
                 }
             }
@@ -69,7 +69,13 @@ const SignUp = () => {
                     <h2>Sign Up</h2>
                     <p>
                         <label>
-                            メールアドレス
+                            <p
+                                style={{
+                                    textAlign: "center",
+                                }}
+                            >
+                                メールアドレス
+                            </p>
                             <input
                                 type="email"
                                 value={email}
@@ -78,9 +84,13 @@ const SignUp = () => {
                             />
                         </label>
                     </p>
-                    <p>
+                    <p
+                        style={{
+                            textAlign: "center",
+                        }}
+                    >
                         <label>
-                            パスワード
+                            <p>パスワード</p>
                             <input
                                 type="password"
                                 value={password}
@@ -89,9 +99,13 @@ const SignUp = () => {
                             />
                         </label>
                     </p>
-                    <p>
+                    <p
+                        style={{
+                            textAlign: "center",
+                        }}
+                    >
                         <label>
-                            パスワード(再入力)
+                            <p>パスワード(再入力)</p>
                             <input
                                 type="password"
                                 value={rePassword}

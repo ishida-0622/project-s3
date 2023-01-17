@@ -17,9 +17,12 @@ const ShopList = () => {
                         storeInfoConverter
                     )
                 )
-            ).docs;
-            setAllShopList(docs.map((v) => v.data()));
-            setShowShopList(docs.map((v) => v.data()));
+            ).docs
+                .map((v) => v.data())
+                .sort((a, b) => (a.store_name > b.store_name ? 1 : -1))
+                .sort((a, b) => a.floor - b.floor);
+            setAllShopList(docs);
+            setShowShopList(docs);
         })();
     }, []);
 

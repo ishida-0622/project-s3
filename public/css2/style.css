@@ -39,7 +39,7 @@ button.btn {
 
 a.btn-radius-solid {
     padding: 1.3em;
-    margin: 1em auto 1.5em;
+    margin: 0.5em auto;
     width: 40%;
     border: 1px solid #ccc;
     background: #f1e767;
@@ -58,7 +58,7 @@ a.btn-radius-solid {
 
 a.btn-radius-solid:hover {
     padding: 1.3em;
-    margin: 1em auto 1.5em;
+    margin: 0.5em auto;
     width: 40%;
     background: -webkit-gradient(
         linear,

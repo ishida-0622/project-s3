@@ -62,7 +62,7 @@ class FloorMap {
                 };
             })
             .catch(() => {
-                throw Error("map data acquisition error");
+                throw new Error("map data acquisition error");
             });
 
         // 現在地の追跡開始
@@ -80,7 +80,7 @@ class FloorMap {
             this.canvas = canvas;
             this.ctx = ctx;
         } else {
-            throw Error("canvas is not found");
+            throw new Error("canvas is not found");
         }
     }
 
@@ -137,7 +137,6 @@ class FloorMap {
             let min = 10e18;
             let id: number = -1;
             // 現在地に一番近いnodeを探索
-            // TODO:4
             this.shopList.node.floor[this._floor].forEach((v, i) => {
                 const tmp = distance(
                     this.currentLocationLatitude,
@@ -226,8 +225,8 @@ class FloorMap {
                     this.show(route);
                 });
 
-                // 3秒停止
-                await sleep(3000);
+                // 1秒停止
+                await sleep(1000);
             }
         } else {
             // 目的地と現在地の階が同じの場合
@@ -251,8 +250,8 @@ class FloorMap {
                 }
                 route.reverse();
                 this.show(route);
-                // 3秒停止
-                await sleep(3000);
+                // 1秒停止
+                await sleep(1000);
             }
         }
     }
