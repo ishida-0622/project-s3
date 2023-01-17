@@ -491,85 +491,73 @@ input:checked + .tab_class + .content_class {
     text-decoration: none;
     background-color: #7fffd4;
 }
+/* 迷子情報、落とし物情報編集 */
 
-/* 一般ユーザようのログイン */
 
-.login {
-    width: 100%;
-    margin: 16px auto;
-    font-size: 16px;
-    margin: 0;
-    background-color: lightgreen;
-}
+/* ログイン画面 */
 
-.login-header,
-.login p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
+body {
+    background-color: black;
+  }
 
-.login-triangle {
-    width: 0;
-    margin-right: auto;
-    margin-left: auto;
-    border: 100% solid transparent;
-    border-bottom-color: lightgreen;
-}
-
-.login-header {
-    background: lightgreen;
-    padding: 20px;
-    font-size: 1.4em;
-    font-weight: normal;
+  form {
+    width: 80%;
+    padding: 10% 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #000;
     text-align: center;
-    text-transform: uppercase;
-    color: rgb(0, 0, 0);
-}
+  }
 
-.login-container {
-    background: #ebebeb;
-    padding: 75px;
-}
+  form h1,form p {
+    color: white;
+    font-weight: 500;
+  }
 
-.login p {
-    padding: 16px;
-}
+  form p {
+    font-size: 10%;
+  }
 
-.login input {
-    box-sizing: border-box;
+  form input[type = "id"],form input[type = "password"] {
+    border: 0;
+    background: none;
     display: block;
-    width: 100%;
-    border-width: 1px;
-    border-style: solid;
-    padding: 16px;
-    outline: 0;
-    font-family: inherit;
-    font-size: 0.95em;
-}
+    margin: 10% auto;
+    border: 2px solid #66cdaa;
+    padding: 5% 5%;
+    width: 60%;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    text-align: center;
+  }
 
-.login input[type="email"],
-.login input[type="password"] {
-    background: #fff;
-    border-color: #fff;
-    color: #555;
-}
+  form input[type = "id"]:focus,form input[type = "password"]:focus {
+    width: 280px;
+    background-color: white;
+  }
 
-.login input[type="email"]:focus,
-.login input[type="password"]:focus {
-    border-color: #fff;
-}
-
-.login input[type="submit"] {
-    background: lightgreen;
-    border-color: transparent;
-    color: rgb(7, 7, 7);
+  form input[type = "submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 10% auto;
+    border: 2px solid;
+    padding: 5% 5%;
+    width: 70%;
+    outline: none;
+    color: white;
+    border-radius: 25px;
+    transition: 0.25s;
+    text-align: center;
     cursor: pointer;
-}
+  }
 
-.login input[type="submit"]:hover {
-    background: lightgreen;
-}
+  form input[type = "submit"]:hover {
+    background-color: #66cdaa;
+    border: 2px solid #66cdaa;
+  }
 
-.login input[type="submit"]:focus {
-    border-color: lightgreen;
-}
+  /* ログイン画面 */

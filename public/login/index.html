@@ -1,28 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../css/style.css" />
-        <title>Document</title>
-    </head>
-    <body>
-        <div class="login">
-            <div class="login-triangle"></div>
-            <h2 class="login-header">Log in</h2>
-            <form class="login-container" id="loginForm">
-                <p><input type="email" placeholder="Email" id="email" /></p>
-                <p>
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        id="password"
-                    />
-                </p>
-                <p><input type="submit" value="Log in" /></p>
-            </form>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="h-menu">
+            <input id="h-menu_checkbox" class="h-menuCheckbox" type="checkbox" />
+            <label class="h-menu_icon" for="h-menu_checkbox"><span class="hamburger-icon"></span></label>
+            <label id="h-menu_black" class="h-menuCheckbox" for="h-menu_checkbox"></label>
+            <div id="h-menu_content">
+                <ul>
+                    <li>
+                        <a href="../signup/index.html">Sign up</a>
+                    </li>
+                    <li>
+                        <a href="../login/index.html">Log in</a>
+                    </li>
+                    <li><a href="#">Log out</a></li>
+                </ul>
+            </div>
         </div>
+    </header>
+    <form name="login_form">
+        <div class="login_form_top">
+            <h1>LOGIN</h1>
+            <p>UserID、Passwordをご入力の上、「LOGIN」ボタンをクリックしてください。</p>
+        </div>
+        <div class="login_form_btm">
+            <input type="id" name="user_id" placeholder="UserID">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" name="botton" value="LOGIN">
+        </div>
+    </form>
         <!-- bottom navigation -->
         <ul class="bottom-menu">
             <li>
