@@ -3,13 +3,14 @@ import {
     createUserWithEmailAndPassword,
     signOut,
 } from "firebase/auth";
-import { auth } from "../../firebase/firebaseConfig";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "../../firebase/firebaseConfig";
 
 /**
- * サインアップした後、認証メールを送信する
+ * サインアップした後、認証メールを送信し、DBにデータを登録する
  * @param mail メールアドレス
  * @param pass パスワード
- * @returns メール送信まで正常に終了したらresolveされるPromise
+ * @returns 正常に終了したらresolveされるPromise
  */
 const signup = (mail: string, pass: string): Promise<void> => {
     return new Promise((resolve, reject) => {
@@ -17,7 +18,10 @@ const signup = (mail: string, pass: string): Promise<void> => {
             .then((u) => {
                 const user = u.user;
                 sendEmailVerification(user)
-                    .then(() => {
+                    .then(async () => {
+                        await setDoc(doc(db, `users/${user.uid}`), {
+                            type: "user",
+                        });
                         signOut(auth);
                         resolve();
                     })
@@ -33,27 +37,27 @@ const signup = (mail: string, pass: string): Promise<void> => {
 
 /** ログインフォームのHTML要素 */
 const element = document.querySelector("#signupForm");
-
-if (element) {
-    // nullでなかったらsubmitイベントを追加
-    element.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const mailElement = document.querySelector(
-            "#email"
-        ) as HTMLInputElement;
-        const passElement = document.querySelector(
-            "#password"
-        ) as HTMLInputElement;
-        if (mailElement && passElement) {
-            const mail = mailElement.value;
-            const pass = passElement.value;
-            signup(mail, pass)
-                .then(() => {
-                    location.href = "/";
-                })
-                .catch((e) => {
-                    alert(e);
-                });
-        }
-    });
+if (!element) {
+    throw new Error("sign up form element is not found");
 }
+
+// nullでなかったらsubmitイベントを追加
+element.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const mailElement = document.querySelector("#email") as HTMLInputElement;
+    const passElement = document.querySelector("#password") as HTMLInputElement;
+    if (mailElement && passElement) {
+        const mail = mailElement.value;
+        const pass = passElement.value;
+        signup(mail, pass)
+            .then(() => {
+                alert(
+                    `${mail}に認証メールを送信しました\n添付されているURLをクリックして認証を完了させてください`
+                );
+                location.href = "/login";
+            })
+            .catch((e) => {
+                alert(e);
+            });
+    }
+});
