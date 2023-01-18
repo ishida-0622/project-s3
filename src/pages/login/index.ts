@@ -22,7 +22,9 @@ const login = (mail: string, pass: string): Promise<boolean> => {
                 if (u.user.emailVerified) {
                     resolve(true);
                 } else {
-                    sendEmailVerification(u.user);
+                    sendEmailVerification(u.user, {
+                        url: "https://tic-s3.web.app/login",
+                    });
                     resolve(false);
                 }
             })
@@ -34,54 +36,51 @@ const login = (mail: string, pass: string): Promise<boolean> => {
 
 /** ログインフォームのHTML要素 */
 const element = document.querySelector("#loginForm");
+if (!element) {
+    throw new Error("login form element is not found");
+}
 
-if (element) {
-    // nullでなかったらsubmitイベントを追加
-    element.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const mailElement = document.querySelector(
-            "#email"
-        ) as HTMLInputElement;
-        const passElement = document.querySelector(
-            "#password"
-        ) as HTMLInputElement;
-        if (mailElement && passElement) {
-            const mail = mailElement.value;
-            const pass = passElement.value;
-            login(mail, pass)
-                .then(async (res) => {
-                    if (res) {
-                        const user = (await getLoginUser())!;
-                        const document = (
-                            await getDoc(
-                                doc(db, `users/${user.uid}`).withConverter(
-                                    userConverter
-                                )
+// nullでなかったらsubmitイベントを追加
+element.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const mailElement = document.querySelector("#email") as HTMLInputElement;
+    const passElement = document.querySelector("#password") as HTMLInputElement;
+    if (mailElement && passElement) {
+        const mail = mailElement.value;
+        const pass = passElement.value;
+        login(mail, pass)
+            .then(async (res) => {
+                if (res) {
+                    const user = (await getLoginUser())!;
+                    const document = (
+                        await getDoc(
+                            doc(db, `users/${user.uid}`).withConverter(
+                                userConverter
                             )
-                        ).data();
-                        if (!document) {
-                            throw new Error("user document is not found");
-                        }
-                        if (document.type === "user") {
-                            location.href = "/";
-                        } else if (document.type === "moll_admin") {
-                            location.href = "/admin/";
-                        } else {
-                            location.href = "/admin/";
-                        }
+                        )
+                    ).data();
+                    if (!document) {
+                        throw new Error("user document is not found");
+                    }
+                    if (document.type === "user") {
+                        location.href = "/";
+                    } else if (document.type === "moll_admin") {
+                        location.href = "/admin/";
                     } else {
-                        signOut(auth);
-                        alert(
-                            `
+                        location.href = "/admin/";
+                    }
+                } else {
+                    signOut(auth);
+                    alert(
+                        `
                             メールアドレス認証が済んでいません\n
                             ${mail}に送信されたメールのURLをクリックして認証を完了してください
                             `
-                        );
-                    }
-                })
-                .catch((e) => {
-                    alert(e);
-                });
-        }
-    });
-}
+                    );
+                }
+            })
+            .catch((e) => {
+                alert(e);
+            });
+    }
+});
