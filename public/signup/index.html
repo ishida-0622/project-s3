@@ -1,81 +1,126 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <title>Document</title>
-</head>
-
-<body>
-    <!DOCTYPE html>
-    <html lang="ja">
-
     <head>
         <meta charset="UTF-8" />
-        <title>project S3</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="./css/style.css" />
-        <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>Sign Up</title>
     </head>
 
     <body>
-        <header>
-            <div class="h-menu">
-                <input id="h-menu_checkbox" class="h-menuCheckbox" type="checkbox" />
-                <label class="h-menu_icon" for="h-menu_checkbox"><span class="hamburger-icon"></span></label>
-                <label id="h-menu_black" class="h-menuCheckbox" for="h-menu_checkbox"></label>
-                <div id="h-menu_content">
-                    <ul>
-                        <li>
-                            <a href="../signup/index.html">Sign up</a>
-                        </li>
-                        <li>
-                            <a href="../login/index.html">Log in</a>
-                        </li>
-                        <li><a href="#">Log out</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-        <form name="signup_form">
-            <div class="signup_form_top">
-                <h1>SIGNUP</h1>
-                <p>UserID、Passwordをご入力の上、「SIGNUP」ボタンをクリックしてください。</p>
-            </div>
-            <div class="login_form_btm">
-                <input type="id" name="user_id" placeholder="UserID">
-                <input type="password" name="password" placeholder="Password">
-                <input type="password" name="passwordcheck" placeholder="Passwordcheck">
-                <input type="submit" name="botton" value="SIGNUP">
-            </div>
-        </form>
-        <!-- bottom navigation -->
-        <ul class="bottom-menu">
-            <li>
-                <!-- ホーム -->
-                <a href="/">
-                    <i class="blogicon-home"></i><br /><span class="mini-text">ホーム</span></a>
-            </li>
-            <li>
-                <!-- 店舗 -->
-                <a href="/shop-list">
-                    <i class="blogicon-twitter"></i><br /><span class="mini-text">店舗</span></a>
-            </li>
-            <li>
-                <!-- MAP -->
-                <a href="/map">
-                    <i class="blogicon-twitter"></i><br /><span class="mini-text">MAP</span></a>
-            </li>
-            <li>
-                <!-- 総合案内 -->
-                <a href="/genenavi.html">
-                    <i class="blogicon-twitter"></i><br /><span class="mini-text">案内</span></a>
-            </li>
-        </ul>
-        <script src="../dist/signup.bundle.js"></script>
-    </body>
+        <!DOCTYPE html>
+        <html lang="ja">
+            <head>
+                <meta charset="UTF-8" />
+                <title>project S3</title>
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
+                <link rel="stylesheet" href="./css/style.css" />
+                <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
+            </head>
 
-    </html>
+            <body>
+                <header>
+                    <div class="h-menu">
+                        <input
+                            id="h-menu_checkbox"
+                            class="h-menuCheckbox"
+                            type="checkbox"
+                        />
+                        <label class="h-menu_icon" for="h-menu_checkbox"
+                            ><span class="hamburger-icon"></span
+                        ></label>
+                        <label
+                            id="h-menu_black"
+                            class="h-menuCheckbox"
+                            for="h-menu_checkbox"
+                        ></label>
+                        <div id="h-menu_content">
+                            <ul>
+                                <li>
+                                    <a href="../signup/index.html">Sign up</a>
+                                </li>
+                                <li>
+                                    <a href="../login/index.html">Log in</a>
+                                </li>
+                                <li><a href="#" id="logout">Log out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+                <form name="signup_form" id="signupForm">
+                    <div class="signup_form_top">
+                        <h1>SIGNUP</h1>
+                        <p>
+                            UserID、Passwordをご入力の上、「SIGNUP」ボタンをクリックしてください。
+                        </p>
+                    </div>
+                    <div class="login_form_btm">
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Mail Address"
+                            id="email"
+                        />
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            id="password"
+                        />
+                        <input
+                            type="password"
+                            name="passwordcheck"
+                            placeholder="Passwordcheck"
+                            id="passwordCheck"
+                        />
+                        <input type="submit" name="botton" value="SIGNUP" />
+                    </div>
+                </form>
+                <!-- bottom navigation -->
+                <ul class="bottom-menu">
+                    <li>
+                        <!-- ホーム -->
+                        <a href="/">
+                            <i class="blogicon-home"></i><br /><span
+                                class="mini-text"
+                                >ホーム</span
+                            ></a
+                        >
+                    </li>
+                    <li>
+                        <!-- 店舗 -->
+                        <a href="/shop-list">
+                            <i class="blogicon-twitter"></i><br /><span
+                                class="mini-text"
+                                >店舗</span
+                            ></a
+                        >
+                    </li>
+                    <li>
+                        <!-- MAP -->
+                        <a href="/map">
+                            <i class="blogicon-twitter"></i><br /><span
+                                class="mini-text"
+                                >MAP</span
+                            ></a
+                        >
+                    </li>
+                    <li>
+                        <!-- 総合案内 -->
+                        <a href="/genenavi.html">
+                            <i class="blogicon-twitter"></i><br /><span
+                                class="mini-text"
+                                >案内</span
+                            ></a
+                        >
+                    </li>
+                </ul>
+                <script src="../dist/signup.bundle.js"></script>
+            </body>
+        </html>
+    </body>
+</html>
