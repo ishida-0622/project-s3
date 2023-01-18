@@ -59,7 +59,9 @@ if (element) {
                                 )
                             )
                         ).data();
-                        if (!document) return;
+                        if (!document) {
+                            throw new Error("user document is not found");
+                        }
                         if (document.type === "user") {
                             location.href = "/";
                         } else if (document.type === "moll_admin") {
