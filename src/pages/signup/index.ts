@@ -44,8 +44,19 @@ if (!element) {
 // nullでなかったらsubmitイベントを追加
 element.addEventListener("submit", (e) => {
     e.preventDefault();
-    const mailElement = document.querySelector("#email") as HTMLInputElement;
-    const passElement = document.querySelector("#password") as HTMLInputElement;
+    const mailElement = document.querySelector(
+        "#email"
+    ) as HTMLInputElement | null;
+    const passElement = document.querySelector(
+        "#password"
+    ) as HTMLInputElement | null;
+    const passCheckElement = document.querySelector(
+        "#passwordCheck"
+    ) as HTMLInputElement | null;
+    if (passElement && passElement.value !== passCheckElement?.value) {
+        alert("パスワードが一致しません");
+        return;
+    }
     if (mailElement && passElement) {
         const mail = mailElement.value;
         const pass = passElement.value;
