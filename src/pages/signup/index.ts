@@ -17,7 +17,9 @@ const signup = (mail: string, pass: string): Promise<void> => {
         createUserWithEmailAndPassword(auth, mail, pass)
             .then((u) => {
                 const user = u.user;
-                sendEmailVerification(user)
+                sendEmailVerification(user, {
+                    url: "http://tic-s3.web.app/login",
+                })
                     .then(async () => {
                         await setDoc(doc(db, `users/${user.uid}`), {
                             type: "user",
