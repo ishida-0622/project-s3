@@ -18,6 +18,8 @@ module.exports = {
         information: "./src/pages/information",
         top: "./src/pages/top",
         homeEdit: "./src/admin/HomeEdit",
+        logout: "./src/modules/logout",
+        shop: "./src/pages/shop",
         // z: "./z.js",
     },
     output: {

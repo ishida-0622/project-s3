@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "nagumo-s3"
+    "develop": "nagumo-s3",
+    "release": "tic-s3"
   }
 }

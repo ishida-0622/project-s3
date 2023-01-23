@@ -1,3 +1,4 @@
 *.json
 *.bundle.js
 !z.json
+*firebase*
