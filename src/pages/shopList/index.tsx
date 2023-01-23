@@ -34,11 +34,12 @@ const ShopList = () => {
                 placeholder={"店舗を検索"}
                 onChange={(e) => {
                     setInputted(e.target.value);
+                    const reg = new RegExp(e.target.value);
                     setShowShopList(
-                        allShopList.filter((v) =>
-                            v.store_name.match(
-                                new RegExp(`^.*${e.target.value}.*$`)
-                            )
+                        allShopList.filter(
+                            (v) =>
+                                v.store_name.match(reg) ||
+                                v.tag.some((t) => t.match(reg))
                         )
                     );
                 }}

@@ -24,7 +24,9 @@ let showShopList: storeInfo[] = [];
 
 const shopSearch = (inputted: string) => {
     const reg = new RegExp(inputted);
-    showShopList = shopList.filter((v) => v.store_name.match(reg));
+    showShopList = shopList.filter(
+        (v) => v.store_name.match(reg) || v.tag.some((t) => t.match(reg))
+    );
     searchResultArea.innerHTML = "";
     showShopList.forEach((v) => {
         const e = document.createElement("div");
