@@ -175,8 +175,10 @@ export type storeInfo = {
     store_name: string;
     store_logo: string;
     store_detail: string;
+    tag: string[];
     floor: number;
     is_camera: boolean;
+    is_sale: boolean;
     is_hidden: boolean;
 };
 
@@ -186,8 +188,10 @@ export const storeInfoConverter: FirestoreDataConverter<storeInfo> = {
             store_name: storeInfoData.store_name,
             store_logo: storeInfoData.store_logo,
             store_detail: storeInfoData.store_detail,
+            tag: storeInfoData.tag,
             floor: storeInfoData.floor,
             is_camera: storeInfoData.is_camera,
+            is_sale: storeInfoData.is_sale,
             is_hidden: storeInfoData.is_hidden,
         };
     },
@@ -197,8 +201,10 @@ export const storeInfoConverter: FirestoreDataConverter<storeInfo> = {
             store_name: data.store_name, //店舗名
             store_logo: data.store_logo, //店舗のロゴ
             store_detail: data.store_detail, //店舗詳細
+            tag: data.tag, // 検索タグ
             floor: data.floor, // 店舗の階層
             is_camera: data.is_camera, // 混雑状況カメラの有無
+            is_sale: data.is_sale, // セール中か
             is_hidden: data.is_hidden, //表示・非表表
         };
     },
