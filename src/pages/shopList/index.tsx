@@ -60,27 +60,44 @@ const ShopList = () => {
                             margin: "2% auto",
                         }}
                     >
-                        <div style={{ display: "flex" }}>
-                            <div style={{ width: "20%" }}>
+                        <div
+                            onClick={() => {
+                                location.href = `/shop/?name=${shop.store_name}`;
+                            }}
+                        >
+                            <div
+                                style={{
+                                    width: "20%",
+                                    position: "absolute",
+                                    marginLeft: "1em",
+                                }}
+                            >
                                 <img
                                     width={"100%"}
                                     src={shop.store_logo}
                                     alt="Logo"
-                                    style={{
-                                        marginTop: "10%",
-                                        marginLeft: "20%",
-                                    }}
                                 />
                             </div>
-                            <h3
-                                style={{
-                                    marginLeft: "20%",
-                                }}
-                            >
-                                {shop.store_name}
-                            </h3>
+                            <div>
+                                <h3 style={{ margin: "0.5em 0 0 0" }}>
+                                    {shop.store_name}
+                                </h3>
+                                {shop.is_sale ? (
+                                    <span style={{ color: "#f00" }}>
+                                        セール中!
+                                    </span>
+                                ) : (
+                                    <></>
+                                )}
+                            </div>
                         </div>
-                        <p>{shop.store_detail}</p>
+                        <p
+                            onClick={() => {
+                                location.href = `/shop/?name=${shop.store_name}`;
+                            }}
+                        >
+                            {shop.store_detail}
+                        </p>
                         {shop.is_camera ? (
                             <button
                                 onClick={() => {
