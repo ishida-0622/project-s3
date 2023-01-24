@@ -43,14 +43,29 @@ const Shop = () => {
                             // margin: "0 auto 0 calc((100% - width) / 2)",
                         }}
                     >
-                        <img
-                            src={shopData.store_logo}
-                            alt="logo"
-                            style={{ width: "30%" }}
-                        />
-                        <h2>
-                            {shopData.store_name}({shopData.floor}F)
-                        </h2>
+                        <div style={{ width: "30%" }}>
+                            <img
+                                src={shopData.store_logo}
+                                alt="logo"
+                                style={{ width: "100%" }}
+                            />
+                        </div>
+                        <div>
+                            <h2>
+                                {shopData.store_name}({shopData.floor}F)
+                            </h2>
+                            {shopData.is_sale ? (
+                                <p
+                                    style={{
+                                        color: "#f00",
+                                    }}
+                                >
+                                    セール中!
+                                </p>
+                            ) : (
+                                <></>
+                            )}
+                        </div>
                     </div>
                     <p>{shopData.store_detail}</p>
                     {shopData.tag.map((t) => (
