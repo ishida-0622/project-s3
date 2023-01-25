@@ -38,20 +38,10 @@
                             class="h-menuCheckbox"
                             for="h-menu_checkbox"
                         ></label>
-                        <div id="h-menu_content">
-                            <ul>
-                                <li>
-                                    <a href="../signup/index.html">Sign up</a>
-                                </li>
-                                <li>
-                                    <a href="../login/index.html">Log in</a>
-                                </li>
-                                <li><a href="#" id="logout">Log out</a></li>
-                            </ul>
-                        </div>
+                        <div id="h-menu_content"></div>
                     </div>
                 </header>
-                <form name="signup_form" id="signupForm">
+                <form name="signup_form" id="signupForm" style="height: 100%">
                     <div class="signup_form_top">
                         <h1>SIGNUP</h1>
                         <p>
@@ -64,20 +54,32 @@
                             name="email"
                             placeholder="Mail Address"
                             id="email"
+                            class="signup"
                         />
                         <input
                             type="password"
                             name="password"
                             placeholder="Password"
                             id="password"
+                            class="signup"
+                            minlength="6"
+                            maxlength="20"
                         />
                         <input
                             type="password"
                             name="passwordcheck"
                             placeholder="Passwordcheck"
                             id="passwordCheck"
+                            class="signup"
+                            minlength="6"
+                            maxlength="20"
                         />
-                        <input type="submit" name="botton" value="SIGNUP" />
+                        <input
+                            type="submit"
+                            class="signup"
+                            name="botton"
+                            value="SIGNUP"
+                        />
                     </div>
                 </form>
                 <!-- bottom navigation -->
@@ -120,7 +122,7 @@
                     </li>
                 </ul>
                 <script src="../dist/signup.bundle.js"></script>
-                <script src="../dist/logout.bundle.js"></script>
+                <script src="../dist/sideMenu.bundle.js"></script>
             </body>
         </html>
     </body>

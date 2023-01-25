@@ -24,40 +24,42 @@
                     class="h-menuCheckbox"
                     for="h-menu_checkbox"
                 ></label>
-                <div id="h-menu_content">
-                    <ul>
-                        <li>
-                            <a href="../signup/index.html">Sign up</a>
-                        </li>
-                        <li>
-                            <a href="../login/index.html">Log in</a>
-                        </li>
-                        <li><a href="#" id="logout">Log out</a></li>
-                    </ul>
-                </div>
+                <div id="h-menu_content"></div>
             </div>
         </header>
-        <form name="login_form" id="loginForm">
-            <div class="login_form_top">
-                <h1>LOGIN</h1>
-                <p>
+        <form
+            name="login_form"
+            id="loginForm"
+            class="login"
+            style="height: 100%; z-index: -1"
+        >
+            <div class="login_form_top" class="login">
+                <h1 class="login">LOGIN</h1>
+                <p class="login">
                     UserID、Passwordをご入力の上、「LOGIN」ボタンをクリックしてください。
                 </p>
             </div>
-            <div class="login_form_btm">
+            <div class="login_form_btm login">
                 <input
                     type="email"
                     name="email"
                     placeholder="Mail Address"
                     id="email"
+                    class="login"
                 />
                 <input
                     type="password"
                     name="password"
                     placeholder="Password"
                     id="password"
+                    class="login"
                 />
-                <input type="submit" name="botton" value="LOGIN" />
+                <input
+                    type="submit"
+                    class="login"
+                    name="botton"
+                    value="LOGIN"
+                />
             </div>
         </form>
         <!-- bottom navigation -->
@@ -99,6 +101,6 @@
             </li>
         </ul>
         <script src="../dist/login.bundle.js"></script>
-        <script src="../dist/logout.bundle.js"></script>
+        <script src="../dist/sideMenu.bundle.js"></script>
     </body>
 </html>
