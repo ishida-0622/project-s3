@@ -8,21 +8,28 @@ const Top = () => {
     if (isLoading) getNews();
 
     return (
-        <main>
-            <h2>Nagumo S3</h2>
+        <main style={{ textAlign: "center" }}>
+            <h1>TIC S3</h1>
+            <h2>店舗ニュース</h2>
             {isLoading ? (
                 <h2>Now Loading...</h2>
             ) : (
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
-                    {news.map((val) => (
-                        <News
-                            key={val.id}
-                            title={val.title}
-                            text={val.text}
-                            image={val.image}
-                            date={val.date}
-                        />
-                    ))}
+                    {news.length ? (
+                        <>
+                            {news.map((val) => (
+                                <News
+                                    key={val.id}
+                                    title={val.title}
+                                    text={val.text}
+                                    image={val.image}
+                                    date={val.date}
+                                />
+                            ))}
+                        </>
+                    ) : (
+                        <p>ニュースがありません</p>
+                    )}
                 </div>
             )}
         </main>
