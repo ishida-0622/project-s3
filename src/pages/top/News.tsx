@@ -15,7 +15,11 @@ const News = (props: news) => {
                 </div>
                 <p>{props.title}</p>
             </div>
-            <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+            <Modal
+                isOpen={isOpen}
+                onRequestClose={() => setIsOpen(false)}
+                style={{ content: { height: "75%" } }}
+            >
                 <div>
                     <div>
                         <img src={props.image} width={"100%"} alt="image" />
