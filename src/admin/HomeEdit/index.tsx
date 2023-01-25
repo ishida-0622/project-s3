@@ -23,6 +23,8 @@ const HomeEdit = () => {
                             image={val.image}
                             date={val.date}
                             id={val.id}
+                            afterNewsDelete={getNews}
+                            afterNewsUpdate={getNews}
                         />
                     ))}
                     <AddNewsModal
