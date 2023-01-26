@@ -9,7 +9,6 @@ const Top = () => {
 
     return (
         <main style={{ textAlign: "center" }}>
-            <h1>TIC S3</h1>
             <h2>店舗ニュース</h2>
             {isLoading ? (
                 <h2>Now Loading...</h2>
