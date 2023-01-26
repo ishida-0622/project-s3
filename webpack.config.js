@@ -6,9 +6,10 @@ module.exports = {
     mode: "production",
     entry: {
         map: "./src/pages/map",
-        login: "./src/pages/login",
-        signup: "./src/pages/signup",
+        // login: "./src/pages/login",
+        // signup: "./src/pages/signup",
         adminSignup: "./src/admin/Signup",
+        adminLogin: "./src/admin/Login",
         lostChild: "./src/pages/lostChild",
         shopList: "./src/pages/shopList",
         shopEdit: "./src/pages/shopEdit",
@@ -18,8 +19,8 @@ module.exports = {
         information: "./src/pages/information",
         top: "./src/pages/top",
         homeEdit: "./src/admin/HomeEdit",
-        logout: "./src/modules/logout",
         shop: "./src/pages/shop",
+        // sideMenu: "./src/components/SideMenu",
         // z: "./z.js",
     },
     output: {
