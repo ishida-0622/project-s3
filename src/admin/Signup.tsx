@@ -34,6 +34,14 @@ const SignUp = () => {
             alert("パスワードが一致していません");
             return;
         }
+        if (password.length < 6) {
+            alert("パスワードが短すぎます");
+            return;
+        }
+        if (password.length > 20) {
+            alert("パスワードが長すぎます");
+            return;
+        }
         createUserWithEmailAndPassword(auth, email, password).then((u) => {
             const uid = u.user.uid;
             const data: user = {
@@ -94,6 +102,8 @@ const SignUp = () => {
                             <input
                                 type="password"
                                 value={password}
+                                minLength={6}
+                                maxLength={20}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required={true}
                             />
@@ -109,6 +119,8 @@ const SignUp = () => {
                             <input
                                 type="password"
                                 value={rePassword}
+                                minLength={6}
+                                maxLength={20}
                                 onChange={(e) => setRePassword(e.target.value)}
                                 required={true}
                             />
