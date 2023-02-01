@@ -9,10 +9,23 @@
     </head>
 
     <body>
-        <header style="text-align: center">
-            <h1 style="margin: 0; padding: 0" onclick="location.href = '/'">
-                TIC S3
-            </h1>
+        <header>
+            <div class="h-menu">
+                <input
+                    id="h-menu_checkbox"
+                    class="h-menuCheckbox"
+                    type="checkbox"
+                />
+                <label class="h-menu_icon" for="h-menu_checkbox"
+                    ><span class="hamburger-icon"></span
+                ></label>
+                <label
+                    id="h-menu_black"
+                    class="h-menuCheckbox"
+                    for="h-menu_checkbox"
+                ></label>
+                <div id="h-menu_content"></div>
+            </div>
         </header>
         <main style="text-align: center">
             <h2>空席情報</h2>
