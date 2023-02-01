@@ -8,7 +8,26 @@
     </head>
 
     <body>
-        <h2>ショッピングモール管理</h2>
+        <header>
+            <div class="h-menu">
+                <input
+                    id="h-menu_checkbox"
+                    class="h-menuCheckbox"
+                    type="checkbox"
+                />
+                <label class="h-menu_icon" for="h-menu_checkbox"
+                    ><span class="hamburger-icon"></span
+                ></label>
+                <label
+                    id="h-menu_black"
+                    class="h-menuCheckbox"
+                    for="h-menu_checkbox"
+                ></label>
+                <div id="h-menu_content"></div>
+            </div>
+        </header>
+        <div id="logout"></div>
+        <h2 style="margin-top: 0">ショッピングモール管理</h2>
         <div class="moll-edit">
             <a href="/admin/lost-child" class="btn btn-radius-solid"
                 >迷子情報編集<i class="fas fa-angle-right fa-position-right"></i
@@ -26,5 +45,6 @@
             </a>
         </div>
         <script src="../dist/adminCheck.bundle.js"></script>
+        <script src="../dist/adminLogout.bundle.js"></script>
     </body>
 </html>
