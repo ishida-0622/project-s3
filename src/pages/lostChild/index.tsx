@@ -22,6 +22,22 @@ const LostChild = () => {
                 textAlign: "center",
             }}
         >
+            <div style={{ textAlign: "left" }}>
+                <button
+                    onClick={() => history.back()}
+                    style={{
+                        fontSize: "1rem",
+                        padding: ".5rem 1rem",
+                        border: "1px solid #ccc",
+                        backgroundColor: "#dbffdb",
+                        borderRadius: ".5rem",
+                        width: "5.5rem",
+                        marginTop: "1%",
+                    }}
+                >
+                    戻る
+                </button>
+            </div>
             <h1>迷子情報</h1>
             {isLoading ? (
                 <h2>Now Loading...</h2>

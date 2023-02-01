@@ -193,10 +193,25 @@ const ShopEdit = () => {
     return (
         <>
             {isLoading ? (
-                <h2>Now Loading...</h2>
+                <div style={{ textAlign: "center" }}>
+                    <h2>Now Loading...</h2>
+                </div>
             ) : (
                 <>
-                    <button onClick={() => history.back()}>戻る</button>
+                    <button
+                        onClick={() => history.back()}
+                        style={{
+                            fontSize: "1rem",
+                            padding: ".5rem 1rem",
+                            border: "1px solid #ccc",
+                            backgroundColor: "#dbffdb",
+                            borderRadius: ".5rem",
+                            width: "5.5rem",
+                            marginTop: "1%",
+                        }}
+                    >
+                        戻る
+                    </button>
                     {shopList.map((shop) => (
                         <ShopElement
                             key={shop.key}
