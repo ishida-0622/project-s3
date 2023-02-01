@@ -32,31 +32,21 @@ const Login = () => {
                 <h2>Login</h2>
                 <p>
                     <label>
-                        <p
-                            style={{
-                                textAlign: "center",
-                            }}
-                        >
-                            メールアドレス
-                        </p>
                         <input
                             type="email"
                             value={email}
+                            placeholder={"メールアドレス"}
                             onChange={(e) => setEmail(e.target.value)}
                             required={true}
                         />
                     </label>
                 </p>
-                <p
-                    style={{
-                        textAlign: "center",
-                    }}
-                >
+                <p>
                     <label>
-                        <p>パスワード</p>
                         <input
                             type="password"
                             value={password}
+                            placeholder={"パスワード"}
                             minLength={6}
                             maxLength={20}
                             onChange={(e) => setPassword(e.target.value)}

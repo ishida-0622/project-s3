@@ -20,7 +20,14 @@ const News = (
 
     return (
         <>
-            <div style={{ width: "60%", margin: "0 auto" }}>
+            <div
+                style={{
+                    width: "60%",
+                    margin: "2% auto",
+                    padding: "1%",
+                    border: "solid 1px",
+                }}
+            >
                 <div style={{ width: "100%" }}>
                     <img src={props.image} width={"100%"} alt="" />
                 </div>
