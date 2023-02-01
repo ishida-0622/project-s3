@@ -16,9 +16,13 @@ const utcToJst = (yyyyMMdd: string, hhmmss: string) => {
 
     const [yyyy, MM, dd] = yyyyMMdd.split("-").map((v) => Number(v));
     const [hh, mm, ss] = hhmmss.split(":").map((v) => Number(v));
-    return `${yyyy}-${MM}-${dd + Math.floor((hh + 9) / 60)} ${
-        (hh + 9) % 24
-    }:${mm}:${ss}`;
+    return `${yyyy}-${MM.toString().padStart(2, "0")}-${(
+        dd + Math.floor((hh + 9) / 60)
+    )
+        .toString()
+        .padStart(2, "0")} ${((hh + 9) % 24).toString().padStart(2, "0")}:${mm
+        .toString()
+        .padStart(2, "0")}:${ss.toString().padStart(2, "0")}`;
 };
 
 export default utcToJst;
