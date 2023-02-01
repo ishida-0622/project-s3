@@ -62,6 +62,14 @@ element.addEventListener("submit", (e) => {
     if (mailElement && passElement) {
         const mail = mailElement.value;
         const pass = passElement.value;
+        if (pass.length < 6) {
+            alert("パスワードが短すぎます");
+            return;
+        }
+        if (pass.length > 20) {
+            alert("パスワードが長すぎます");
+            return;
+        }
         signup(mail, pass)
             .then(() => {
                 alert(
