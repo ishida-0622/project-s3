@@ -93,6 +93,7 @@ const AddNewsModal = (props: {
                             required={true}
                         />
                     </label>
+                    <br />
                     <label>
                         本文
                         <br />
