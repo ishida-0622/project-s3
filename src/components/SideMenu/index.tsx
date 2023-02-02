@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import Logout from "./Logout";
 import Signup from "./Signup";
 import Login from "./Login";
+import Coupon from "./Coupon";
 
 const SideMenu = () => {
     const { user, isLoading } = useLoginUser();
@@ -13,7 +14,10 @@ const SideMenu = () => {
     ) : (
         <ul>
             {user ? (
-                <Logout />
+                <>
+                    <Logout />
+                    <Coupon />
+                </>
             ) : (
                 <>
                     <Login />
