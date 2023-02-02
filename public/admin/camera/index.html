@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>project S3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+
+    <body>
+        <div style="position: absolute">
+            <div id="logout"></div>
+            <div id="back"></div>
+        </div>
+        <main style="text-align: center; margin-bottom: 0">
+            <video></video>
+            <canvas style="display: none"></canvas>
+            <audio>
+                <source src="./camera.mp3" type="audio/mp3" />
+            </audio>
+            <form onsubmit="return false">
+                <label>
+                    <select name="shop" required>
+                        <option value="" selected disabled>
+                            選択してください
+                        </option>
+                    </select>
+                </label>
+                <br />
+                <label>
+                    撮影間隔
+                    <input
+                        type="number"
+                        value="5"
+                        min="1"
+                        style="width: 2rem"
+                    />分
+                </label>
+                <br />
+                <input type="submit" value="撮影開始" />
+            </form>
+            <div id="clear"></div>
+        </main>
+        <script src="../../dist/camera.bundle.js"></script>
+        <script src="../../dist/adminCheck.bundle.js"></script>
+        <script src="../../dist/adminLogout.bundle.js"></script>
+        <script src="../../dist/backButton.bundle.js"></script>
+    </body>
+</html>
