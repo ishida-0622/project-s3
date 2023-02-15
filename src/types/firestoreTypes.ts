@@ -236,3 +236,24 @@ export const newsConverter: FirestoreDataConverter<news> = {
         };
     },
 };
+
+export type Coupon = {
+    text: string;
+    image: string;
+};
+
+export const couponConverter: FirestoreDataConverter<Coupon> = {
+    toFirestore: (couponData: Coupon) => {
+        return {
+            text: couponData.text,
+            image: couponData.image,
+        };
+    },
+    fromFirestore: (snapshot, options): Coupon => {
+        const data = snapshot.data(options);
+        return {
+            text: data.text,
+            image: data.image,
+        };
+    },
+};
