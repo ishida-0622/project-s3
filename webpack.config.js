@@ -22,8 +22,10 @@ module.exports = {
         homeEdit: "./src/admin/HomeEdit",
         shop: "./src/pages/shop",
         sideMenu: "./src/components/SideMenu",
-        // camera: "./src/admin/Camera",
-        // z: "./z.js",
+        camera: "./src/admin/Camera",
+        backButton: "./src/components/BackButton",
+        coupon: "./src/pages/coupon",
+        couponEdit: "./src/admin/Coupon",
     },
     output: {
         path: path.resolve(__dirname, "./public/dist"),
