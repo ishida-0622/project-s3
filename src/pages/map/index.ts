@@ -1,7 +1,7 @@
 import { db } from "../../firebase/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import { storeInfo, storeInfoConverter } from "../../types/firestoreTypes";
-import FloorMap, { floor } from "./FloorMap";
+import FloorMap, { Floor } from "./FloorMap";
 import sleep from "../../modules/sleep";
 
 const searchBar = document.getElementById(
@@ -21,6 +21,8 @@ if (!searchResultArea) {
 }
 let shopList: storeInfo[] = [];
 let showShopList: storeInfo[] = [];
+const nf = new URL(location.href).searchParams.get("now_floor");
+let nowFloor: Floor = nf ? (Number(nf) as Floor) : 4;
 
 const shopSearch = (inputted: string) => {
     const reg = new RegExp(inputted);
@@ -31,7 +33,10 @@ const shopSearch = (inputted: string) => {
     showShopList.forEach((v) => {
         const e = document.createElement("div");
         const a = document.createElement("a");
-        a.href = `./?goal=${v.store_name}&goal_floor=${v.floor}`;
+        e.className = "link";
+        a.href = `./?goal=${v.store_name}&goal_floor=${v.floor}${
+            nowFloor ? `&now_floor=${nowFloor}` : ""
+        }`;
         a.text = v.store_name;
         e.appendChild(a);
         searchResultArea.appendChild(e);
@@ -40,6 +45,7 @@ const shopSearch = (inputted: string) => {
 
 searchBar.onfocus = () => {
     searchResultArea.style.display = "";
+    shopSearch(searchBar.value);
 };
 
 searchBar.onblur = async () => {
@@ -74,7 +80,11 @@ const main = async () => {
         params.get("goal_floor") && isFinite(Number(params.get("goal_floor")))
             ? Number(params.get("goal_floor"))
             : null;
-    const floorMap = new FloorMap(4, goal, goalFloor);
+    const imageElement = document.getElementById(
+        "mapImage"
+    ) as HTMLImageElement;
+    imageElement.src = `./images/map_${nowFloor ? nowFloor : 4}.svg`;
+    const floorMap = new FloorMap(nowFloor ? nowFloor : 4, goal, goalFloor);
 
     /** 階層選択ボタン */
     const floorSelectButtons = document.querySelectorAll(
@@ -89,10 +99,9 @@ const main = async () => {
         element.addEventListener("click", () => {
             const id = Number(element.id);
             if (isFinite(id)) {
-                floorMap.floor = id as floor;
-                (
-                    document.getElementById("mapImage") as HTMLImageElement
-                ).src = `./images/map_${id}.svg`;
+                floorMap.floor = id as Floor;
+                floorMap.isFloorChange = true;
+                nowFloor = id as Floor;
             } else {
                 throw new Error("floor select button id is not number");
             }
