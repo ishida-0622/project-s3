@@ -4,16 +4,18 @@ import { map, mapConverter } from "../../types/firestoreTypes";
 import sleep from "../../modules/sleep";
 import distance from "../../modules/distance";
 
-export type floor = 4 | 5 | 6;
+export type Floor = 4 | 5 | 6;
 
 class FloorMap {
     /** 現在の階層 */
-    private _floor: floor = 4;
+    private _floor: Floor = 4;
     private shopList!: map;
     /** 現在位置の緯度 */
     private currentLocationLatitude: number = 0;
     /** 現在位置の経度 */
     private currentLocationLongitude: number = 0;
+    /** 高さ */
+    private altitude: number | null = null;
     /** 目的地の店名 */
     private _destination: string | null;
     /** 目的地の階層 */
@@ -25,6 +27,8 @@ class FloorMap {
     /** mapの描画場所 */
     private canvas: HTMLCanvasElement;
     private ctx: CanvasRenderingContext2D;
+    private img: HTMLImageElement = document.querySelector("img")!;
+    public isFloorChange = false;
 
     /**
      * @param floor 現在いる階
@@ -32,7 +36,7 @@ class FloorMap {
      * @param destinationFloor 目的地の階
      */
     constructor(
-        floor: floor,
+        floor: Floor,
         destination: string | null = null,
         destinationFloor: number | null = null
     ) {
@@ -51,11 +55,10 @@ class FloorMap {
                         this.destinationLocationLongitude = val.longitude;
                     }
                 });
-                const img = new Image();
-                img.src = `./images/map_${this._floor}.svg`;
-                img.onload = () => {
-                    this.canvas.width = img.width;
-                    this.canvas.height = img.height;
+                this.img.src = `./images/map_${this._floor}.svg`;
+                this.img.onload = () => {
+                    this.canvas.width = this.img.width;
+                    this.canvas.height = this.img.height;
                     if (destination && destinationFloor) {
                         this.dijkstra();
                     }
@@ -84,13 +87,12 @@ class FloorMap {
         }
     }
 
-    set floor(floor: floor) {
+    set floor(floor: Floor) {
         this._floor = floor;
-        const img = new Image();
-        img.src = `./images/map_${this._floor}.svg`;
-        img.onload = () => {
-            this.canvas.width = img.width;
-            this.canvas.height = img.height;
+        this.img.src = `./images/map_${this._floor}.svg`;
+        this.img.onload = () => {
+            this.canvas.width = this.img.width;
+            this.canvas.height = this.img.height;
             if (this.shopList) {
                 this.dijkstra();
             }
@@ -108,6 +110,19 @@ class FloorMap {
     private getCurrentLocation(pos: GeolocationPosition) {
         this.currentLocationLatitude = pos.coords.latitude;
         this.currentLocationLongitude = pos.coords.longitude;
+        this.altitude = pos.coords.altitude;
+        if (!pos.coords.altitude || this.isFloorChange) {
+            return;
+        }
+        if (pos.coords.altitude < 54) {
+            this._floor = 4;
+        } else if (pos.coords.altitude < 57) {
+            this._floor = 5;
+        } else {
+            this._floor = 6;
+        }
+        this.img.src = `./images/map_${this._floor}.svg`;
+        this.dijkstra();
     }
 
     fall(pos: GeolocationPositionError) {
