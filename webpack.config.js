@@ -1,6 +1,4 @@
 const path = require("path");
-const glob = require("glob");
-const entries = glob.sync("./dist/**/*.tsx");
 
 module.exports = {
     mode: "production",
