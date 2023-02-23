@@ -4,9 +4,6 @@ body {
     margin: 0;
     padding: 0;
     border: none;
-    /* color: #fff; */
-    /* background-color: #f8d6e6; */
-    /* background-color: #000; */
 }
 
 main {
@@ -501,7 +498,7 @@ input:checked + .tab_class + .content_class {
 
 form {
     width: 80%;
-    padding: 10% 10%;
+    padding: 0 10%;
     position: absolute;
     top: 50%;
     left: 50%;
